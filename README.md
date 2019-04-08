@@ -4,7 +4,7 @@ other possible name: __Sanity Test__
 # Description
 Bat Sh!t Crazy Test is an app that allows you to determine if you have completely lost your mind or not. Answer hard questions, simple questions, trick questions, doubly non-trick trick questions, and more to reveal the truth behind the stability of your psyche.
 
-App creator: Keawa Rozet
+App creator: Keawa Rozet  
 Code reviewer: 
 # How it works
   The app will randomly select 10-15 questions from its database to ask the user. A single question might contain multiple questions attached to it, or multiple random responses to the user's answer. Each answer to every question will have a "sanity" point value associated to it. At the end, if the user's sanity points reach above a specific threshold then the user will be declared Bat Sh!t Crazy.  

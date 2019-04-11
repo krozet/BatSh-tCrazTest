@@ -48,7 +48,7 @@ Code reviewer:
   - Screen that shows information about the test
   - Possible images to go along with text
 # Mock Ups  
-![](Assets/bsc mockup.jpg?raw=true)
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/bsc%20mockup.jpg?raw=true)  
 
 # Work load
 - Database of over 200 questions and responses (16hrs)

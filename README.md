@@ -47,7 +47,8 @@ Code reviewer:
 # Nice to-have Features  
   - Screen that shows information about the test
   - Possible images to go along with text
-# Wire-frames
+# Mock Ups  
+![](Assets/bsc mockup.jpg?raw=true)
 
 # Work load
 - Database of over 200 questions and responses (16hrs)

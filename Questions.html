@@ -12,60 +12,99 @@
 <tw-story></tw-story>
 
 <tw-storydata name="Bat Sh!t Crazy" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C95AC2F4-7235-493D-BB85-2437132D224F" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Flip A Coin" tags="" position="300,39" size="200,100">I flip a coin 99 times and all 99 times it lands heads up. What side will land face up on the 100th flip?
 
-[[Heads|Ch1.Heads - FQ1]]
-[[Tails|Ch1.Tails - FQ1]]</tw-passagedata><tw-passagedata pid="2" name="Ch1.Heads - FQ1" tags="" position="202,200" size="100,100">What if I reassured you the coin was fair?
+</script><tw-passagedata pid="1" name="Q1: Flip A Coin" tags="" position="300,39" size="200,100">I flip a coin 99 times and all 99 times it lands heads up. What side will land face up on the 100th flip?
 
-[[Heads|Ch1-1.Heads - RE1-1.Heads]]
-[[Tails|Ch1-1.Tails - RE1-1.Tails]]</tw-passagedata><tw-passagedata pid="3" name="Ch1.Tails - FQ1" tags="" position="503,202" size="100,100">What if I flip the coin 999 times and all 999 times it lands heads up. What side will land face up on the 1000th flip?
+[[Heads|Q1.Ch1-1(Heads).FQ1-1]]
+[[Tails|Q1.Ch1-2(Tails).FQ1-2]]</tw-passagedata><tw-passagedata pid="2" name="Q1.Ch1-1(Heads).FQ1-1" tags="" position="202,200" size="100,100">What if I reassured you the coin was fair?
 
-[[Heads|Ch1-2.Heads - RE1-2.Heads]]
-[[Tails|Ch1-2.Tails - RE1-2.Tails]]</tw-passagedata><tw-passagedata pid="4" name="Ch1-1.Heads - RE1-1.Heads" tags="" position="101,349" size="100,100">Do you really think it is wise to trust what you observe over the laws of probability?
+[[Heads|Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1]]
+[[Tails|Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2]]</tw-passagedata><tw-passagedata pid="3" name="Q1.Ch1-2(Tails).FQ1-2" tags="" position="503,202" size="100,100">What if I flip the coin 999 times and all 999 times it lands heads up. What side will land face up on the 1000th flip?
 
-[[Retry|Flip A Coin]] </tw-passagedata><tw-passagedata pid="5" name="Ch1-1.Tails - RE1-1.Tails" tags="" position="275,353" size="100,100">Are you normally this distrusting of others?
+[[Heads|Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3]]
+[[Tails|Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4]]</tw-passagedata><tw-passagedata pid="4" name="Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1" tags="" position="101,349" size="100,100">Do you really think it is wise to trust what you observe over the laws of probability?
 
-[[Retry|Flip A Coin]] </tw-passagedata><tw-passagedata pid="6" name="Ch1-2.Heads - RE1-2.Heads" tags="" position="405,351" size="100,100">Are you normally so easily swayed?
+[[Retry|Q1: Flip A Coin]] </tw-passagedata><tw-passagedata pid="5" name="Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2" tags="" position="275,353" size="100,100">Are you normally this distrusting of others?
 
-[[Retry|Flip A Coin]] </tw-passagedata><tw-passagedata pid="7" name="Ch1-2.Tails - RE1-2.Tails" tags="" position="601,348" size="100,100">Do you root for the underdog because you see yourself as one?
+[[Retry|Q1: Flip A Coin]] </tw-passagedata><tw-passagedata pid="6" name="Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3" tags="" position="405,351" size="100,100">Are you normally so easily swayed?
 
-[[Retry|Flip A Coin]] </tw-passagedata><tw-passagedata pid="8" name="Risk Taker" tags="" position="500,501" size="100,100">Do you consider yourself a risk taker?</tw-passagedata><tw-passagedata pid="9" name="Math Question" tags="" position="1174,47" size="100,100">[insert difficult math question here]
+[[Retry|Q1: Flip A Coin]] </tw-passagedata><tw-passagedata pid="7" name="Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4" tags="" position="601,348" size="100,100">Do you root for the underdog because you see yourself as one?
+
+[[Retry|Q1: Flip A Coin]] </tw-passagedata><tw-passagedata pid="8" name="Risk Taker" tags="" position="676,49" size="100,100">Do you consider yourself a risk taker?</tw-passagedata><tw-passagedata pid="9" name="Q2: Math Question" tags="" position="494,479" size="100,100">[insert difficult math question here]
 // begin timer to see how long they take to answer
 
 // 10 answers, one of them is correct
 
 // scenarios bases on their time &amp;&amp; answer
 
-[[Correct Answer; answered in less than 3 seconds|CH1.Correct Answer &amp;&amp; &lt; 3 seconds - FQ1-1]]
+[[Correct Answer; answered in less than 3 seconds|Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1]]
 
-[[Correct Answer; answered greater than 3 seconds|CH1.Correct Answer &amp;&amp; &gt; 3 seconds  - RE1-1]]
+[[Correct Answer; answered greater than 3 seconds|Q2.Ch1-2(Correct Answer &amp;&amp; &gt; 3 seconds).RE1-1]]
 
-[[Incorrect Answer; answered in less than 3 seconds|CH1.Incorrect Answer &amp;&amp; &lt; 3 seconds  - RE1-2]]
+[[Incorrect Answer; answered in less than 3 seconds|Q2.Ch1-3(Incorrect Answer &amp;&amp; &lt; 3 seconds).RE1-2]]
 
-[[Incorrect Answer; answered greater than 3 seconds|CH1.Incorrect Answer &amp;&amp; &gt; 3 seconds  - RE1-3]]</tw-passagedata><tw-passagedata pid="10" name="CH1.Correct Answer &amp;&amp; &lt; 3 seconds - FQ1-1" tags="" position="816,197" size="100,100">Lucky guess? Or have you peeked into the future to find the correct answer?
+[[Incorrect Answer; answered greater than 3 seconds|Q2.Ch1-4(Incorrect Answer &amp;&amp; &gt; 3 seconds).RE1-3]]</tw-passagedata><tw-passagedata pid="10" name="Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1" tags="" position="136,629" size="100,100">Lucky guess? Or have you peeked into the future to find the correct answer?
 
-[[Lucky guess|CH2.Lucky Guess - RE1-1]]
-[[You caught me, I&#39;m Clairvoyant|CH2.Clarivoyant - RE1-2]]</tw-passagedata><tw-passagedata pid="11" name="CH1.Incorrect Answer &amp;&amp; &lt; 3 seconds  - RE1-2" tags="" position="1280,197" size="100,100">I wouldn&#39;t be surprised to find out you got drunk in Vegas on your 22nd birthday and got a tramp stamp with the name of you now ex-lover.
+[[Lucky guess|Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1-1(Lucky Guess).RE2-1]]
+[[You caught me, I&#39;m Clairvoyant|Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1-2(Clairvoyant).RE2-2]]</tw-passagedata><tw-passagedata pid="11" name="Q2.Ch1-3(Incorrect Answer &amp;&amp; &lt; 3 seconds).RE1-2" tags="" position="600,629" size="100,100">I wouldn&#39;t be surprised to find out you got drunk in Vegas on your 22nd birthday and got a tramp stamp with the name of you now ex-lover.
 
-[[Retry|Math Question]] </tw-passagedata><tw-passagedata pid="12" name="CH1.Incorrect Answer &amp;&amp; &gt; 3 seconds  - RE1-3" tags="" position="1474,197" size="100,100">All that time spent thinking just to choose the wrong answer.
+[[Retry|Q2: Math Question]] </tw-passagedata><tw-passagedata pid="12" name="Q2.Ch1-4(Incorrect Answer &amp;&amp; &gt; 3 seconds).RE1-3" tags="" position="794,629" size="100,100">All that time spent thinking just to choose the wrong answer.
 
 Was this a lack of resoursefulness? Lack of will? Or lack of value in how you spend your time?
 
-[[Retry|Math Question]]</tw-passagedata><tw-passagedata pid="13" name="CH2.Lucky Guess - RE1-1" tags="" position="741,347" size="100,100">Perhaps impulsiveness suits you.
+[[Retry|Q2: Math Question]]</tw-passagedata><tw-passagedata pid="13" name="Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1-1(Lucky Guess).RE2-1" tags="" position="61,779" size="100,100">Perhaps impulsiveness suits you.
 
 Perhaps the world should be run by people who impulsively make decisions and hope luck intervenes when laziness takes control.
 
-[[Retry|Math Question]] </tw-passagedata><tw-passagedata pid="14" name="CH2.Clarivoyant - RE1-2" tags="" position="868,349" size="100,100">I have a better word than Clairvoyant:
+[[Retry|Q2: Math Question]] </tw-passagedata><tw-passagedata pid="14" name="Q2.Ch1-1(Correct Answer &amp;&amp; &lt; 3 seconds).FQ1-2(Clairvoyant).RE2-2" tags="" position="188,781" size="100,100">I have a better word than Clairvoyant:
 
 Cheater.
 
-[[Retry|Math Question]] </tw-passagedata><tw-passagedata pid="15" name="CH1.Correct Answer &amp;&amp; &gt; 3 seconds  - RE1-1" tags="" position="1086,200" size="100,100">A high aptitude in mathematics doesn&#39;t have any direct correlation to the soundness of your mind.
+[[Retry|Q2: Math Question]] </tw-passagedata><tw-passagedata pid="15" name="Q2.Ch1-2(Correct Answer &amp;&amp; &gt; 3 seconds).RE1-1" tags="" position="406,632" size="100,100">A high aptitude in mathematics doesn&#39;t have any direct correlation to the soundness of your mind.
 
 What does it say about you that you took the time to calculate the correct answer to a math question during a psychological examination?
 
 
-[[Retry|Math Question]] </tw-passagedata><tw-passagedata pid="16" name="Hide and Seek" tags="" position="643,499" size="100,100">Are you better at hiding, or seeking?</tw-passagedata></tw-storydata>
+[[Retry|Q2: Math Question]] </tw-passagedata><tw-passagedata pid="16" name="Hide and Seek" tags="" position="819,47" size="100,100">Are you better at hiding, or seeking?</tw-passagedata><tw-passagedata pid="17" name="Extrovert" tags="" position="977,46" size="100,100">Do people enegize you?</tw-passagedata><tw-passagedata pid="18" name="Late/Early" tags="" position="1121,48" size="100,100">Would you rather always be 5 minutes late or 30 minutes early?</tw-passagedata><tw-passagedata pid="19" name="Milk in Cereal" tags="" position="1274,51" size="100,100">Milk before or after the cereal?</tw-passagedata><tw-passagedata pid="20" name="Q3:Follow Directions" tags="" position="241,924" size="100,100">Click Yes.
+
+[[Yes|Q3.Ch1-1(Yes).FQ1]]
+[[No|Q3.Ch1-2(No).FQ2]]</tw-passagedata><tw-passagedata pid="21" name="Q3.Ch1-1(Yes).FQ1" tags="" position="146,1065" size="100,100">Click No.
+
+[[Yes|Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1]]
+[[No|Q3.Ch1-1(Yes).FQ1-1(No).RE1-2]]</tw-passagedata><tw-passagedata pid="22" name="Q3.Ch1-2(No).FQ2" tags="" position="340,1064" size="100,100">Click No.
+
+[[Yes|Q3.Ch1-2(No).FQ2-1(Yes).RE1-3]]
+[[No|Q3.Ch1-2(No).FQ2-2(No).RE1-4]]</tw-passagedata><tw-passagedata pid="23" name="Q3.Ch1-2(No).FQ2-1(Yes).RE1-3" tags="" position="307,1222" size="100,100">Do you only follow directions when it suits you?
+or
+Do you feel powerful taking control where you can?
+
+[[Retry|Q3:Follow Directions]] </tw-passagedata><tw-passagedata pid="24" name="Q3.Ch1-2(No).FQ2-2(No).RE1-4" tags="" position="425,1224" size="100,100">Do you pride yourself in your unpredictablility?
+
+[[Retry|Q3:Follow Directions]] </tw-passagedata><tw-passagedata pid="25" name="Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1" tags="" position="71,1222" size="100,100">Do you pride yourself in your unpredictablility?
+
+[[Retry|Q3:Follow Directions]] </tw-passagedata><tw-passagedata pid="26" name="Q3.Ch1-1(Yes).FQ1-1(No).RE1-2" tags="" position="193,1222" size="100,100">There are few things as nauseating as pure obedience.
+
+[[Retry|Q3:Follow Directions]] </tw-passagedata><tw-passagedata pid="27" name="Q4:Forest" tags="" position="600,903" size="100,100">You are traveling to Town B in serach of riches and stop to rest at Town A. 
+
+Three people tell you the road to Town B is full of ravenous man-eating unicorns and you will surely perish if you travel on the road.
+
+Do you believe there are ravenous man-eating unicorns on the road to Town B?
+
+[[Yes|Q4.Ch1-1(Yes).RE1-1]]
+[[No|Q4.Ch1-2(No).FQ1]]</tw-passagedata><tw-passagedata pid="28" name="Q4.Ch1-1(Yes).RE1-1" tags="" position="525,1053" size="100,100">Must be exhausting being so afraid and gullable all the time.
+
+[[Retry|Q4:Forest]] </tw-passagedata><tw-passagedata pid="29" name="Q4.Ch1-2(No).FQ1" tags="" position="698,1055" size="100,100">Now the entire town tells you there are ravenous man-eating unicorns on the road to Town B.
+
+Do you travel on the road to Town B in search of riches? Or do you turn around and go home empty-handed?
+
+[[Travel to Town B|Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1]]
+[[Return Home|Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2]]</tw-passagedata><tw-passagedata pid="30" name="Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1" tags="" position="634,1179" size="100,100">Double-click this passage to edit it.
+
+[[Retry|Q4:Forest]]</tw-passagedata><tw-passagedata pid="31" name="Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2" tags="" position="769,1179" size="100,100">Double-click this passage to edit it.
+
+[[Retry|Q4:Forest]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

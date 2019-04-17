@@ -1,4 +1,5 @@
-# Bat Sh!t Crazy Test
+# Bat Sh!t Crazy Test  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/BSC%20icon.png)  
 other possible name: __Sanity Test__
 
 # Description

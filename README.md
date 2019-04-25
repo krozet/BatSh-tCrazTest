@@ -1,4 +1,5 @@
-# Bat Sh!t Crazy Test
+# Bat Sh!t Crazy Test  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/BSC%20icon.png)  
 other possible name: __Sanity Test__
 
 # Description
@@ -7,7 +8,7 @@ Bat Sh!t Crazy Test is an app that allows you to determine if you have completel
 App creator: Keawa Rozet  
 Code reviewer: 
 # How it works
-  The app will randomly select 10-15 questions from its database to ask the user. A single question might contain multiple questions attached to it, or multiple random responses to the user's answer. Each answer to every question will have a "sanity" point value associated to it. At the end, if the user's sanity points reach above a specific threshold then the user will be declared Bat Sh!t Crazy.  
+  The app will randomly select 10-15 questions from its database to ask the user. A single question might contain multiple questions attached to it, or multiple random responses to the user's answer. Each answer to every question will have one or more personality tags associated to it. At the end depending on the the user's combination of their highest and lowest personality tag occurances, they will be considered Bat Sh!t Crazy or perfectly (and boringly) sane.  
     
   The questions will vary from simple questions, to serious question about life & philosophy. The user might be asked to respond to a Rorschach test, or even a lightning round of questions that are timed. There will be many trick questions as well and responses to user's answers that will give them another chance to reconsider their choice. The questions are meant to be humorous and witty, causing the user to lightly exhale in amusement at some questions and take a second to consider others.
   

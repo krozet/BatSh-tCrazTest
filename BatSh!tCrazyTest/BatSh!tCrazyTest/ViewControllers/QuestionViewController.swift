@@ -54,23 +54,24 @@ class QuestionViewController: UIViewController {
     }
     
     private func updateView(label: String) {
-        twoAnswerViewController.view.isHidden = false
-        rorschachTestViewController.view.isHidden = false
-        responseViewController.view.isHidden = false
+        twoAnswerViewController.view.isHidden = true
+        rorschachTestViewController.view.isHidden = true
+        responseViewController.view.isHidden = true
         
         switch (currentView) {
         case QuestionViewController.TwoAnswer:
-            twoAnswerViewController.view.isHidden = true
+            twoAnswerViewController.view.isHidden = false
             twoAnswerViewController.changeLabel(message: label)
         case QuestionViewController.RorschachTest:
-            rorschachTestViewController.view.isHidden = true
+            rorschachTestViewController.view.isHidden = false
             rorschachTestViewController.changeLabel(message: label)
         case QuestionViewController.Response:
-            responseViewController.view.isHidden = true
+            responseViewController.view.isHidden = false
             responseViewController.changeLabel(message: label)
         default:
-            responseViewController.view.isHidden = true
+            responseViewController.view.isHidden = false
         }
+        print("cur view: \(currentView)")
     }
     
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {

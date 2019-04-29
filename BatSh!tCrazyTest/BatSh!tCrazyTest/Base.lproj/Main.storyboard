@@ -250,7 +250,6 @@
                         <viewLayoutGuide key="safeArea" id="HIt-NM-Taf"/>
                     </view>
                     <connections>
-                        <outlet property="GoToResponse" destination="Jaf-lr-qz3" id="cWw-KJ-dXj"/>
                         <outlet property="messageLabel" destination="ULb-jh-dum" id="lpS-lN-KUR"/>
                     </connections>
                 </viewController>
@@ -277,17 +276,11 @@
                                 <rect key="frame" x="91" y="535" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Two Questions"/>
-                                <connections>
-                                    <action selector="GoToTwoAnswers:" destination="hU2-l5-LNb" eventType="touchUpInside" id="aqH-NA-wky"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5i-tc-QLC">
                                 <rect key="frame" x="228" y="535" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Rorschach Test"/>
-                                <connections>
-                                    <action selector="GoToRorschach:" destination="hU2-l5-LNb" eventType="touchUpInside" id="POw-kK-QPV"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85I-qP-Z5U">
                                 <rect key="frame" x="186" y="338" width="42" height="21"/>
@@ -301,8 +294,6 @@
                         <viewLayoutGuide key="safeArea" id="cgc-O0-2ob"/>
                     </view>
                     <connections>
-                        <outlet property="message" destination="85I-qP-Z5U" id="1Ot-PC-jZi"/>
-                        <outlet property="rorschach" destination="H5i-tc-QLC" id="fIo-Gs-skb"/>
                         <outlet property="twoAnswersButton" destination="nmr-vF-pON" id="EC0-Ar-gxI"/>
                     </connections>
                 </viewController>
@@ -322,9 +313,6 @@
                                 <rect key="frame" x="190" y="542" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="GoToResponse:" destination="1j9-P7-feq" eventType="touchUpInside" id="FQA-IC-Xfk"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-j8-5KP">
                                 <rect key="frame" x="190" y="324" width="42" height="21"/>
@@ -344,9 +332,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vrB-DY-rDq"/>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="UWi-4g-iX9" id="kor-pU-bm6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ0-BK-ve5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

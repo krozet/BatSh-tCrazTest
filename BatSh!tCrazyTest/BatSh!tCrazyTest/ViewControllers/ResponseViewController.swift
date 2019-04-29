@@ -17,6 +17,7 @@ class ResponseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("response view shown")
         // Do any additional setup after loading the view.
     }
     
@@ -32,9 +33,9 @@ class ResponseViewController: UIViewController {
     */
     
     func changeLabel(message: String) {
-        messageLabel.text = message
+        //messageLabel.text = "message"
     }
-    
+    /*
     @IBAction func GoToRorschach(_ sender: UIButton) {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Research", viewToGoTo: QuestionViewController.RorschachTest)
@@ -44,4 +45,5 @@ class ResponseViewController: UIViewController {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Research", viewToGoTo: QuestionViewController.TwoAnswer)
     }
+ */
 }

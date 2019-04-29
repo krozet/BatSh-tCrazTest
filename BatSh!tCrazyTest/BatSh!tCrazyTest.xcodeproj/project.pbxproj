@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
+		A1DE481E2277727000364AE9 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481D2277727000364AE9 /* TestManager.swift */; };
+		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
+		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
 		FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */; };
 		FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB72274F80500BC876F /* ResultsViewController.swift */; };
 		FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		A1DE481D2277727000364AE9 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
+		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
 		FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FA0F4FB72274F80500BC876F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +94,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1DE481A2277719400364AE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1DE48212277752200364AE9 /* QuestionTypes */,
+				A1DE481D2277727000364AE9 /* TestManager.swift */,
+				A1DE481F2277728F00364AE9 /* QuestionManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1DE48212277752200364AE9 /* QuestionTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A1DE481B2277724B00364AE9 /* QuestionType.swift */,
+				A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */,
+			);
+			path = QuestionTypes;
+			sourceTree = "<group>";
+		};
 		FA0F4FB92275161600BC876F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +149,7 @@
 		FA9358552272427F006E521C /* BatSh!tCrazyTest */ = {
 			isa = PBXGroup;
 			children = (
+				A1DE481A2277719400364AE9 /* Model */,
 				FA0F4FB92275161600BC876F /* ViewControllers */,
 				FA9358562272427F006E521C /* AppDelegate.swift */,
 				FA93585A2272427F006E521C /* Main.storyboard */,
@@ -282,14 +310,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */,
 				FA0F4FBD227516E100BC876F /* RorschachViewController.swift in Sources */,
 				FA9358592272427F006E521C /* IntroductionViewController.swift in Sources */,
 				FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */,
+				A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */,
 				FA9358572272427F006E521C /* AppDelegate.swift in Sources */,
 				FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */,
 				FA0F4FBF227516F400BC876F /* ResponseViewController.swift in Sources */,
 				FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */,
 				FA93585F2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld in Sources */,
+				A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */,
+				A1DE481E2277727000364AE9 /* TestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

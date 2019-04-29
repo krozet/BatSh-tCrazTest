@@ -10,9 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    public static let TwoAnswer = 0
-    public static let RorschachTest = 1
-    public static let Response = 2
+    
     
     var currentView = -1
     
@@ -41,7 +39,7 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentView = QuestionViewController.Response
+        currentView = QuestionType.Response
 
         // Do any additional setup after loading the view.
         updateView(label: "Start")
@@ -59,13 +57,13 @@ class QuestionViewController: UIViewController {
         responseViewController.view.isHidden = true
         
         switch (currentView) {
-        case QuestionViewController.TwoAnswer:
+        case QuestionType.TwoAnswer:
             twoAnswerViewController.view.isHidden = false
             twoAnswerViewController.changeLabel(message: label)
-        case QuestionViewController.RorschachTest:
+        case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
             rorschachTestViewController.changeLabel(message: label)
-        case QuestionViewController.Response:
+        case QuestionType.Response:
             responseViewController.view.isHidden = false
             responseViewController.changeLabel(message: label)
         default:

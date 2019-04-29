@@ -34,7 +34,7 @@ class TwoAnswerViewController: UIViewController {
         messageLabel.text = message
     }
     
-    @IBAction func GoToResponse(_ sender: UIButton) {
+    @IBAction func ShowResponse(_ sender: UIButton) {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Two Answer", viewToGoTo: QuestionViewController.Response)
     }

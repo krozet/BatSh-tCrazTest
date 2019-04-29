@@ -10,14 +10,13 @@ import UIKit
 
 class ResponseViewController: UIViewController {
 
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var rorschachTestButton: UIButton!
     @IBOutlet var twoAnswersButton: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("response view shown")
         // Do any additional setup after loading the view.
     }
     
@@ -33,17 +32,16 @@ class ResponseViewController: UIViewController {
     */
     
     func changeLabel(message: String) {
-        //messageLabel.text = "message"
+        messageLabel.text = message
     }
-    /*
-    @IBAction func GoToRorschach(_ sender: UIButton) {
+    
+    @IBAction func ShowRorschachTest(_ sender: Any) {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Research", viewToGoTo: QuestionViewController.RorschachTest)
     }
     
-    @IBAction func GoToTwoAnswers(_ sender: UIButton) {
+    @IBAction func ShowTwoAnswers(_ sender: Any) {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Research", viewToGoTo: QuestionViewController.TwoAnswer)
     }
- */
 }

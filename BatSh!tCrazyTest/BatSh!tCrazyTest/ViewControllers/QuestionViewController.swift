@@ -71,7 +71,6 @@ class QuestionViewController: UIViewController {
         default:
             responseViewController.view.isHidden = false
         }
-        print("cur view: \(currentView)")
     }
     
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {

@@ -11,7 +11,6 @@ import UIKit
 class RorschachViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class RorschachViewController: UIViewController {
         messageLabel.text = message
     }
 
-    @IBAction func GoToResponse(_ sender: UIButton) {
+    @IBAction func ShowResponse(_ sender: Any) {
         let viewController = parent as! QuestionViewController
         viewController.questionFinished(label: "From Rorschach", viewToGoTo: QuestionViewController.Response)
     }

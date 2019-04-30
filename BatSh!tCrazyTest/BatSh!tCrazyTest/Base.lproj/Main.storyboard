@@ -44,19 +44,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-ll-638">
-                                <rect key="frame" x="16" y="615" width="382" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-N6-cO9">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-ZK-Bz1">
-                                        <rect key="frame" x="195" y="0.0" width="187" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-lX-E8Q">
                                 <rect key="frame" x="16" y="611" width="382" height="180"/>
                                 <subviews>
@@ -140,15 +127,11 @@
                         <constraints>
                             <constraint firstItem="qHf-E5-PWb" firstAttribute="trailing" secondItem="8E7-lX-E8Q" secondAttribute="trailing" constant="16" id="Hpq-uZ-Wmw"/>
                             <constraint firstItem="8E7-lX-E8Q" firstAttribute="centerX" secondItem="wLM-cB-M0a" secondAttribute="centerX" id="Mzm-Xo-Ok8"/>
-                            <constraint firstItem="kc2-ll-638" firstAttribute="centerX" secondItem="wLM-cB-M0a" secondAttribute="centerX" id="YEm-sY-ggd"/>
                             <constraint firstItem="8E7-lX-E8Q" firstAttribute="leading" secondItem="qHf-E5-PWb" secondAttribute="leading" constant="16" id="rpP-gM-bVi"/>
-                            <constraint firstItem="qHf-E5-PWb" firstAttribute="trailing" secondItem="kc2-ll-638" secondAttribute="trailing" constant="16" id="yYb-Fq-u8o"/>
-                            <constraint firstItem="kc2-ll-638" firstAttribute="leading" secondItem="qHf-E5-PWb" secondAttribute="leading" constant="16" id="ynx-yR-DgF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qHf-E5-PWb"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="kc2-ll-638"/>
                                 <exclude reference="8E7-lX-E8Q"/>
                                 <exclude reference="VTA-0k-yeY"/>
                             </mask>
@@ -223,39 +206,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-lr-qz3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-lr-qz3">
                                 <rect key="frame" x="192" y="542" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="ShowResponse:" destination="O3p-tt-h9E" eventType="touchUpInside" id="1Bc-Vs-cwd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-jh-dum">
-                                <rect key="frame" x="16" y="347" width="382" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-jh-dum">
+                                <rect key="frame" x="16" y="347" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Qestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-kh-nLS">
-                                <rect key="frame" x="155" y="253" width="104" height="21"/>
+                                <rect key="frame" x="155" y="253.5" width="104" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-ll-638">
+                                <rect key="frame" x="16" y="637" width="382" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-N6-cO9">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-ZK-Bz1">
+                                        <rect key="frame" x="195" y="0.0" width="187" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HIt-NM-Taf" firstAttribute="trailing" secondItem="ULb-jh-dum" secondAttribute="trailing" constant="16" id="2Ow-HK-TgE"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="16" id="4CB-5T-Jy4"/>
+                            <constraint firstItem="kc2-ll-638" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="16" id="KF4-iN-H32"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="centerX" secondItem="wdQ-kh-nLS" secondAttribute="centerX" id="Pjf-KG-HPI"/>
+                            <constraint firstItem="HIt-NM-Taf" firstAttribute="trailing" secondItem="kc2-ll-638" secondAttribute="trailing" constant="16" id="S9y-kt-A6N"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="top" secondItem="wdQ-kh-nLS" secondAttribute="bottom" constant="73" id="Szt-xB-8MB"/>
+                            <constraint firstItem="kc2-ll-638" firstAttribute="top" secondItem="Jaf-lr-qz3" secondAttribute="bottom" constant="65" id="bTE-tM-Cal"/>
+                            <constraint firstItem="HIt-NM-Taf" firstAttribute="bottom" secondItem="kc2-ll-638" secondAttribute="bottom" constant="195" id="iu3-jx-M5N"/>
+                            <constraint firstItem="Jaf-lr-qz3" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="192" id="oNV-tO-Uc2"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="top" secondItem="Cwi-8P-zw0" secondAttribute="top" constant="347" id="wOm-Ad-8wO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HIt-NM-Taf"/>
                     </view>
                     <connections>
-                        <outlet property="messageLabel" destination="ULb-jh-dum" id="lpS-lN-KUR"/>
+                        <outlet property="leftButton" destination="DcU-N6-cO9" id="vth-DI-6hT"/>
+                        <outlet property="questionText" destination="ULb-jh-dum" id="lpS-lN-KUR"/>
+                        <outlet property="rightButton" destination="6fF-ZK-Bz1" id="chx-MV-dCx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyS-Xh-Uvi" userLabel="First Responder" sceneMemberID="firstResponder"/>

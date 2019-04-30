@@ -10,8 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    
-    
+    var qManager: QuestionManager!
     var currentView = -1
     
     lazy var twoAnswerViewController: TwoAnswerViewController = {
@@ -39,7 +38,8 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentView = QuestionType.Response
+        currentView = QuestionType.TwoAnswer
+        qManager = QuestionManager()
 
         // Do any additional setup after loading the view.
         updateView(label: "Start")
@@ -59,7 +59,8 @@ class QuestionViewController: UIViewController {
         switch (currentView) {
         case QuestionType.TwoAnswer:
             twoAnswerViewController.view.isHidden = false
-            twoAnswerViewController.changeLabel(message: label)
+            twoAnswerViewController.changeQuestionText(questionText: qManager.getQuestionText())
+            twoAnswerViewController.changeButtonText(buttonTexts: qManager.getButtonTexts())
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
             rorschachTestViewController.changeLabel(message: label)

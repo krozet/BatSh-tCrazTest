@@ -10,8 +10,9 @@ import UIKit
 
 class TwoAnswerViewController: UIViewController {
 
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var questionText: UILabel!
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,13 @@ class TwoAnswerViewController: UIViewController {
     }
     */
     
-    func changeLabel(message: String) {
-        messageLabel.text = message
+    func changeQuestionText(questionText: [String]) {
+        self.questionText.text = questionText[0]
+    }
+    
+    func changeButtonText(buttonTexts: [String]) {
+        leftButton.setTitle(buttonTexts[0], for: .normal)
+        rightButton.setTitle(buttonTexts[1], for: .normal)
     }
     
     @IBAction func ShowResponse(_ sender: UIButton) {

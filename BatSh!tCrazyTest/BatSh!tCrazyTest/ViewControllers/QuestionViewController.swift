@@ -38,7 +38,7 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentView = QuestionType.TwoAnswer
+        currentView = QuestionType.Response
         qManager = QuestionManager()
 
         // Do any additional setup after loading the view.

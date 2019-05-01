@@ -13,13 +13,16 @@ class ResponseViewController: UIViewController {
     @IBOutlet weak var rorschachTestButton: UIButton!
     @IBOutlet var twoAnswersButton: UIView!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet var window: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.gestureRecognizer))
+        tapGesture.delegate = self as? UIGestureRecognizerDelegate
+        window.addGestureRecognizer(tapGesture)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -30,6 +33,9 @@ class ResponseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func gestureRecognizer() {
+        print("TAP")
+    }
     
     func changeLabel(message: String) {
         messageLabel.text = message

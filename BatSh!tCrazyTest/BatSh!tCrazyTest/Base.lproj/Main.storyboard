@@ -302,6 +302,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="85I-qP-Z5U" firstAttribute="leading" secondItem="cgc-O0-2ob" secondAttribute="leading" constant="16" id="7pI-tR-kJl"/>
                             <constraint firstItem="cgc-O0-2ob" firstAttribute="trailing" secondItem="85I-qP-Z5U" secondAttribute="trailing" constant="16" id="PQN-LV-gkF"/>
@@ -310,13 +311,20 @@
                             <constraint firstItem="85I-qP-Z5U" firstAttribute="top" secondItem="68Q-Zy-fGI" secondAttribute="bottom" constant="71" id="wYR-iz-xQc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgc-O0-2ob"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eCz-vo-rjI" appends="YES" id="u22-gX-1KX"/>
+                            <outletCollection property="gestureRecognizers" destination="eCz-vo-rjI" appends="YES" id="sB3-gU-Rbf"/>
+                            <outletCollection property="gestureRecognizers" destination="eCz-vo-rjI" appends="YES" id="GDN-6o-32g"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="85I-qP-Z5U" id="6LX-oN-qel"/>
                         <outlet property="twoAnswersButton" destination="nmr-vF-pON" id="EC0-Ar-gxI"/>
+                        <outlet property="window" destination="nmr-vF-pON" id="NZ0-oV-Mjq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBh-r4-pg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eCz-vo-rjI"/>
             </objects>
             <point key="canvasLocation" x="1554" y="806"/>
         </scene>

@@ -30,6 +30,7 @@ class TwoAnswerQuestion {
     
     struct response {
         let responseName: String
+        let responseText: String
         let nextQuestionName: String?
         let end: Bool
     }
@@ -46,8 +47,8 @@ class TwoAnswerQuestion {
         buttons.append(button(buttonName: buttonName, buttonText: buttonText, nextResponseName: nextResponseName, nextQuestionName: nextQuestionName, isNextAQuestion: isNextAQuestion, end: end))
     }
     
-    public func insertResponse(responseName: String, nextQuestionName: String?, end: Bool) {
-        responses.append(response(responseName: responseName, nextQuestionName: nextQuestionName, end: end))
+    public func insertResponse(responseName: String, responseText: String, nextQuestionName: String?, end: Bool) {
+        responses.append(response(responseName: responseName, responseText: responseText, nextQuestionName: nextQuestionName, end: end))
     }
     
     public func getQuestion(questionName: String?) -> [String] {

@@ -11,10 +11,17 @@ import Foundation
 class QuestionManager {
     
     var taQuestion: TwoAnswerQuestion
+    var qDatabase: QuestionDatabase
     
     init() {
         taQuestion = TwoAnswerQuestion()
-        createFirstQuestion()
+        qDatabase = QuestionDatabase()
+        
+        self.createFirstQuestion()
+    }
+    
+    public func beginQuestion() {
+        
     }
     
     public func createFirstQuestion() {

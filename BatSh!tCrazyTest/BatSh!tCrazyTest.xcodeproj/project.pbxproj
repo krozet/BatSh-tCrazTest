@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10E6690227B41CC009FEF26 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E668F227B41CC009FEF26 /* Question.swift */; };
 		A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */; };
 		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
 		A1DE481E2277727000364AE9 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481D2277727000364AE9 /* TestManager.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A10E668F227B41CC009FEF26 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDatabase.swift; sourceTree = "<group>"; };
 		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		A1DE481D2277727000364AE9 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				A1DE481B2277724B00364AE9 /* QuestionType.swift */,
 				A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */,
 				A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */,
+				A10E668F227B41CC009FEF26 /* Question.swift */,
 			);
 			path = QuestionTypes;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */,
 				FA0F4FBF227516F400BC876F /* ResponseViewController.swift in Sources */,
 				FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */,
+				A10E6690227B41CC009FEF26 /* Question.swift in Sources */,
 				FA93585F2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld in Sources */,
 				A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */,
 				A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */,

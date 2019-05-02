@@ -12,12 +12,6 @@ class QuestionType {
     public static let TwoAnswer = 0
     public static let RorschachTest = 1
     public static let Response = 2
-    
-    init() {
-        
-    }
-    
-    public func insertQuestion(name: String) {
-    
-    }
 }
+
+

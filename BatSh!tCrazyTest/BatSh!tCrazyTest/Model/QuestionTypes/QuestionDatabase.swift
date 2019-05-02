@@ -12,8 +12,9 @@ class QuestionDatabase {
     var totalNumberOfTwoAnswerQuestions = 1
     var twoAnswerQuestions = [TwoAnswerQuestion]()
     
-    public func getTestQuestions() {
+    public func getTestQuestions() -> ([TwoAnswerQuestion]) {
         generateRandomTwoAnswerQuestions()
+        return (twoAnswerQuestions)
     }
     
     public func generateRandomTwoAnswerQuestions() {

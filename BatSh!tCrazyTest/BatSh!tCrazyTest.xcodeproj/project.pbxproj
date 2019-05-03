@@ -13,6 +13,7 @@
 		A1DE481E2277727000364AE9 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481D2277727000364AE9 /* TestManager.swift */; };
 		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
 		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
+		A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */; };
 		FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */; };
 		FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB72274F80500BC876F /* ResultsViewController.swift */; };
 		FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */; };
@@ -52,6 +53,7 @@
 		A1DE481D2277727000364AE9 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
+		A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RorschachQuestion.swift; sourceTree = "<group>"; };
 		FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FA0F4FB72274F80500BC876F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */,
 				A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */,
 				A10E668F227B41CC009FEF26 /* Question.swift */,
+				A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */,
 			);
 			path = QuestionTypes;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */,
+				A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */,
 				FA0F4FBD227516E100BC876F /* RorschachViewController.swift in Sources */,
 				FA9358592272427F006E521C /* IntroductionViewController.swift in Sources */,
 				FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */,

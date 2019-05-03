@@ -12,6 +12,8 @@ class QuestionType {
     public static let TwoAnswer = 0
     public static let RorschachTest = 1
     public static let Response = 2
+    
+    public static let NumberOfQuestionTypes = 2
 }
 
 

@@ -59,8 +59,8 @@ class QuestionViewController: UIViewController {
         switch (currentView) {
         case QuestionType.TwoAnswer:
             twoAnswerViewController.view.isHidden = false
-            twoAnswerViewController.changeQuestionText(questionText: qManager.getQuestionText())
-            twoAnswerViewController.changeButtonText(buttonTexts: qManager.getButtonTexts())
+            //twoAnswerViewController.changeQuestionText(questionText: qManager.getQuestionText())
+            //twoAnswerViewController.changeButtonText(buttonTexts: qManager.getButtonTexts())
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
             rorschachTestViewController.changeLabel(message: label)

@@ -12,10 +12,12 @@ class Question {
     var questions = [question]()
     var buttons = [button]()
     var responses = [response]()
+    var currentName: String?
+    var isCurrentNameQuestion: Bool
     
     struct question {
         let questionName: String
-        let questionBrokenIntoLines: [String]
+        let questionText: String
         let buttonNames: [String]
     }
     
@@ -35,8 +37,17 @@ class Question {
         let end: Bool
     }
     
-    public func insertQuestion(questionName: String, questionBrokenIntoLines: [String], buttonNames: [String]) {
-        questions.append(question(questionName: questionName, questionBrokenIntoLines: questionBrokenIntoLines, buttonNames: buttonNames))
+    init() {
+        isCurrentNameQuestion = true
+    }
+    
+    public func insertQuestion(questionName: String, questionText: String, buttonNames: [String]) {
+        questions.append(question(questionName: questionName, questionText: questionText, buttonNames: buttonNames))
+        
+        if currentName == nil {
+            currentName = questionName
+            isCurrentNameQuestion = true
+        }
     }
     
     public func insertButton(buttonName: String, buttonText: String, nextResponseName: String?, nextQuestionName: String?, isNextAQuestion: Bool, end: Bool) {
@@ -51,15 +62,39 @@ class Question {
         return questions[0].questionName
     }
     
-    public func getQuestion(questionName: String?) -> [String] {
+    public func getNextQuestionName(buttonName: String) -> String {
+        let index = questions.firstIndex(where: {
+            $0.questionName == buttonName
+        }) ?? 0
+        
+        return questions[index].questionName
+    }
+    
+    public func getNextQuestionNameFromResponse(responseName: String) -> String {
+        let index = responses.firstIndex(where: {
+            $0.responseName == responseName
+        }) ?? 0
+        
+        return responses[index].nextQuestionName ?? questions[0].questionName
+    }
+    
+    public func getNextResponseName(buttonName: String) -> String {
+        let index = responses.firstIndex(where: {
+            $0.responseName == buttonName
+        }) ?? 0
+        
+        return responses[index].responseName
+    }
+    
+    public func getQuestionText(questionName: String?) -> String {
         var index = 0
         if questionName != nil {
             index = questions.firstIndex(where: {
                 $0.questionName == questionName
-            }) ?? -1
+            }) ?? 0
         }
         
-        return questions[index].questionBrokenIntoLines
+        return questions[index].questionText
     }
     
     public func getResponse(responseName: String?) -> String {
@@ -85,12 +120,31 @@ class Question {
     }
     
     public func getButtonText(buttonName: String) -> String {
-        var index = 0
-        index = buttons.firstIndex(where: {
+        let index = buttons.firstIndex(where: {
             $0.buttonName == buttonName
         }) ?? 0
         
         return buttons[index].buttonText
+    }
+    
+    public func getButtonTexts(questionName: String) -> [String] {
+        let buttonNames = getButtonNames(questionName: questionName)
+        var buttonTexts = [String]()
+        for buttonName in buttonNames {
+            buttonTexts.append(getButtonText(buttonName: buttonName))
+        }
+        return buttonTexts
+    }
+    
+    public func getButtonNameFromTextAndCurrentName(buttonText: String) -> String {
+        let buttonNames = getButtonNames(questionName: currentName!)
+        for buttonName in buttonNames {
+            if getButtonText(buttonName: buttonName) == buttonText {
+                return buttonName
+            }
+        }
+    
+        return currentName!
     }
     
     public func doesButtonShowResponseNext(buttonName: String) -> Bool {
@@ -100,6 +154,11 @@ class Question {
         }) ?? 0
         
         return !buttons[index].isNextAQuestion
+    }
+    
+    // override this method
+    public func getQuestionType() -> Int {
+        return -1
     }
     
     public func doesButtonShowQuestionNext(buttonName: String) -> Bool {
@@ -127,5 +186,19 @@ class Question {
         }) ?? 0
         
         return buttons[index].end
+    }
+    
+    public func isQuestionFinished(isButton: Bool, name: String) -> Bool {
+        if isButton {
+            return isButtonEnd(buttonName: name)
+        }
+        return isResponseEnd(responseName: name)
+    }
+    
+    public func startQuestion() -> () {
+    }
+    
+    public func next() -> () {
+        
     }
 }

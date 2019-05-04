@@ -105,10 +105,9 @@ class QuestionManager {
         return -1    }
     
     
-    public func startNextQuestion() -> Int {
+    public func startNextQuestion() {
         //currentQuestion.
         currentQuestion?.startQuestion()
-        return 1
     }
     
     public func getCurrentQuestionType() -> Int {

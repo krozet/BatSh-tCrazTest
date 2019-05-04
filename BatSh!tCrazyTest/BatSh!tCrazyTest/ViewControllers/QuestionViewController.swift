@@ -42,19 +42,19 @@ class QuestionViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
-        updateView(label: "Start")
+        updateView()
         qManager = QuestionManager(questionViewController: self)
-        var num = qManager.queueNextQuetion()
-        var num2 = qManager.startNextQuestion()
+        currentView = qManager.queueNextQuetion()
+        qManager.startNextQuestion()
     }
     
     public func questionFinished(label: String, viewToGoTo: Int) {
         currentView = viewToGoTo
         
-        updateView(label: label)
+        updateView()
     }
     
-    private func updateView(label: String) {
+    private func updateView() {
         twoAnswerViewController.view.isHidden = true
         rorschachTestViewController.view.isHidden = true
         responseViewController.view.isHidden = true
@@ -62,16 +62,20 @@ class QuestionViewController: UIViewController {
         switch (currentView) {
         case QuestionType.TwoAnswer:
             twoAnswerViewController.view.isHidden = false
-            twoAnswerViewController.changeQuestionText(questionText: label)
-            //twoAnswerViewController.changeButtonText(buttonTexts: qManager.getButtonTexts())
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
-            rorschachTestViewController.changeLabel(message: label)
         case QuestionType.Response:
             responseViewController.view.isHidden = false
-            responseViewController.changeLabel(message: label)
         default:
             responseViewController.view.isHidden = false
+        }
+    }
+    
+    private func updateTwoAnswer(questionText: String, buttonNames: [String]) {
+        updateView()
+        if currentView == QuestionType.TwoAnswer {
+            twoAnswerViewController.changeQuestionText(questionText: questionText)
+            twoAnswerViewController.changeButtonText(buttonTexts: buttonNames)
         }
     }
     
@@ -100,6 +104,6 @@ class QuestionViewController: UIViewController {
 
 extension QuestionViewController: QuestionViewControllerDelegate {
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
-        updateView(label: questionText)
+        updateTwoAnswer(questionText: questionText, buttonNames: buttonNames)
         print("came from question view controller delegate")    }
 }

@@ -31,8 +31,8 @@ class TwoAnswerViewController: UIViewController {
     }
     */
     
-    func changeQuestionText(questionText: [String]) {
-        self.questionText.text = questionText[0]
+    func changeQuestionText(questionText: String) {
+        self.questionText.text = questionText
     }
     
     func changeButtonText(buttonTexts: [String]) {

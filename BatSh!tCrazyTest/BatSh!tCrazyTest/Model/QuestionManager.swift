@@ -8,8 +8,15 @@
 
 import Foundation
 
+protocol QuestionViewControllerDelegate {
+    func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String])
+    
+    
+}
+
 class QuestionManager {
     let numberOfTestQuestions = 10
+    
     struct Stack {
         private var questions: [Question] = []
         
@@ -33,22 +40,25 @@ class QuestionManager {
         }
     }
     
-    var taQuestion: TwoAnswerQuestion
-    var qDatabase: QuestionDatabase
+    var taQuestion: TwoAnswerQuestion?
+    var qDatabase: QuestionDatabase?
     var questionStack: Stack
     var currentQuestion: Question?
+    var questionViewControllerDelegate: QuestionViewController
     
-    init() {
-        taQuestion = TwoAnswerQuestion()
-        qDatabase = QuestionDatabase()
+    init(questionViewController: QuestionViewController) {
         questionStack = Stack()
+        questionViewControllerDelegate = questionViewController
+        
+        taQuestion = TwoAnswerQuestion(questionManager: self)
+        qDatabase = QuestionDatabase(questionManager: self)
         
         self.createFirstQuestion()
         loadQuestions()
     }
     
     private func loadQuestions() {
-        var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) = qDatabase.getTestQuestions()
+        var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) = qDatabase!.getTestQuestions()
         var question: Question
         
         while numOfQuestions > 0 {
@@ -97,6 +107,8 @@ class QuestionManager {
     
     public func startNextQuestion() -> Int {
         //currentQuestion.
+        currentQuestion?.startQuestion()
+        return 1
     }
     
     public func getCurrentQuestionType() -> Int {
@@ -114,9 +126,18 @@ class QuestionManager {
     public func createFirstQuestion() {
         let questionText = "I flip a coin 99 times and all 99 times it lands heads up. WHat side wil lland face up on the 100th flip?"
         let buttonNames = ["Q1.Ch1-1(Heads).FQ1-1", "Q1.Ch1-2(Tails).FQ1-2"]
-        taQuestion.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)
-        taQuestion.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-1", buttonText: "Heads", nextResponseName: nil, nextQuestionName: "Q1.Ch1-1(Heads).FQ1-1", isNextAQuestion: true, end: false)
-        taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2", buttonText: "Tails", nextResponseName: nil, nextQuestionName: "Q1.Ch1-2(Tails).FQ1-2", isNextAQuestion: true, end: false)
+        taQuestion!.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)
+        taQuestion!.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-1", buttonText: "Heads", nextResponseName: nil, nextQuestionName: "Q1.Ch1-1(Heads).FQ1-1", isNextAQuestion: true, end: false)
+        taQuestion!.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2", buttonText: "Tails", nextResponseName: nil, nextQuestionName: "Q1.Ch1-2(Tails).FQ1-2", isNextAQuestion: true, end: false)
+    }
+    
+    
+}
+
+extension QuestionManager: QuestionManagerDelegate {
+    func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
+        print("came from question manager delegate")
+        questionViewControllerDelegate.changeTwoAnswerQuestionToShowQuestion(questionText: questionText, buttonNames: buttonNames)
     }
     
     

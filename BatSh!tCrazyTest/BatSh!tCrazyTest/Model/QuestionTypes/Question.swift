@@ -8,12 +8,19 @@
 
 import Foundation
 
+protocol QuestionManagerDelegate {
+    func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String])
+    
+    
+}
+
 class Question {
     var questions = [question]()
     var buttons = [button]()
     var responses = [response]()
     var currentName: String?
     var isCurrentNameQuestion: Bool
+    var questionManagerDelegate: QuestionManager
     
     struct question {
         let questionName: String
@@ -37,8 +44,17 @@ class Question {
         let end: Bool
     }
     
-    init() {
+    init(questionManager: QuestionManager) {
         isCurrentNameQuestion = true
+        questionManagerDelegate = questionManager
+    }
+    
+    // override this function
+    public func startQuestion() {
+    }
+    
+    // override this function
+    public func next(isButton: Bool, name: String) {
     }
     
     public func insertQuestion(questionName: String, questionText: String, buttonNames: [String]) {
@@ -193,12 +209,5 @@ class Question {
             return isButtonEnd(buttonName: name)
         }
         return isResponseEnd(responseName: name)
-    }
-    
-    public func startQuestion() -> () {
-    }
-    
-    public func next() -> () {
-        
     }
 }

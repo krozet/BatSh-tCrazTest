@@ -12,7 +12,11 @@ class QuestionDatabase {
     var totalNumberOfTwoAnswerQuestions = 1
     var twoAnswerQuestions = [TwoAnswerQuestion]()
     var rorschachQuestions = [RorschachQuestion]()
+    var questionManager: QuestionManager
     
+    init(questionManager: QuestionManager) {
+        self.questionManager = questionManager
+    }
     public func getTestQuestions() -> (Int, [TwoAnswerQuestion], [RorschachQuestion]) {
         generateRandomTwoAnswerQuestions()
         
@@ -38,7 +42,7 @@ class QuestionDatabase {
     }
     
     public func createFlipACointQuestion() {
-        let taQuestion = TwoAnswerQuestion()
+        let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
         let questionText = "I flip a coin 99 times and all 99 times it lands heads up. WHat side wil lland face up on the 100th flip?"
         let buttonNames = ["Q1.Ch1-1(Heads).FQ1-1", "Q1.Ch1-2(Tails).FQ1-2"]
         taQuestion.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)

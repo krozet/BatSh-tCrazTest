@@ -38,11 +38,14 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentView = QuestionType.Response
-        qManager = QuestionManager()
+        currentView = QuestionType.TwoAnswer
+        
 
         // Do any additional setup after loading the view.
         updateView(label: "Start")
+        qManager = QuestionManager(questionViewController: self)
+        var num = qManager.queueNextQuetion()
+        var num2 = qManager.startNextQuestion()
     }
     
     public func questionFinished(label: String, viewToGoTo: Int) {
@@ -59,7 +62,7 @@ class QuestionViewController: UIViewController {
         switch (currentView) {
         case QuestionType.TwoAnswer:
             twoAnswerViewController.view.isHidden = false
-            //twoAnswerViewController.changeQuestionText(questionText: qManager.getQuestionText())
+            twoAnswerViewController.changeQuestionText(questionText: label)
             //twoAnswerViewController.changeButtonText(buttonTexts: qManager.getButtonTexts())
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
@@ -93,4 +96,10 @@ class QuestionViewController: UIViewController {
     }
     */
 
+}
+
+extension QuestionViewController: QuestionViewControllerDelegate {
+    func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
+        updateView(label: questionText)
+        print("came from question view controller delegate")    }
 }

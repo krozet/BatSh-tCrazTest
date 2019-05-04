@@ -10,8 +10,8 @@ import Foundation
 
 protocol QuestionManagerDelegate {
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String])
-    
-    
+    func changeTwoAnswerQuestionToShowResponse(responseText: String)
+    func twoAnswerQuestionIsFinished()
 }
 
 class Question {
@@ -121,7 +121,7 @@ class Question {
             }) ?? 0
         }
         
-        return responses[index].responseName
+        return responses[index].responseText
     }
     
     public func getButtonNames(questionName: String?) -> [String] {
@@ -159,7 +159,17 @@ class Question {
                 return buttonName
             }
         }
+        print("check for error in getButtonNameFromTextAndCurrentName")
+        return currentName!
+    }
     
+    public func getResponseNameFromResposneText(responseText: String) -> String {
+        for res in responses {
+            if res.responseText == responseText {
+                return res.responseName
+            }
+        }
+        print("check for erorr in getResponseNameFromResponseText")
         return currentName!
     }
     

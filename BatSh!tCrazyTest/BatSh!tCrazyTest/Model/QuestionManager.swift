@@ -10,8 +10,8 @@ import Foundation
 
 protocol QuestionViewControllerDelegate {
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String])
-    
-    
+    func changeTwoAnswerQuestionToShowResponse(responseName: String)
+    func twoAnswerQuestionIsFinished()
 }
 
 class QuestionManager {
@@ -118,8 +118,17 @@ class QuestionManager {
         return questionStack.isEmpty()
     }
     
-    public func continueQuestion() {
-        
+    public func continueQuestion(lastIdentifier: String) {
+        switch (getCurrentQuestionType()) {
+        case QuestionType.TwoAnswer:
+            currentQuestion?.next(isButton: true, name: lastIdentifier)
+        case QuestionType.RorschachTest:
+            return
+        case QuestionType.Response:
+            currentQuestion?.next(isButton: false, name: lastIdentifier)
+        default:
+            return
+        }
     }
     
     public func createFirstQuestion() {
@@ -135,8 +144,15 @@ class QuestionManager {
 
 extension QuestionManager: QuestionManagerDelegate {
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
-        print("came from question manager delegate")
         questionViewControllerDelegate.changeTwoAnswerQuestionToShowQuestion(questionText: questionText, buttonNames: buttonNames)
+    }
+    
+    func changeTwoAnswerQuestionToShowResponse(responseText: String) {
+        questionViewControllerDelegate.changeTwoAnswerQuestionToShowResponse(responseName: responseText)
+    }
+    
+    func twoAnswerQuestionIsFinished() {
+        
     }
     
     

@@ -48,10 +48,8 @@ class QuestionViewController: UIViewController {
         qManager.startNextQuestion()
     }
     
-    public func questionFinished(label: String, viewToGoTo: Int) {
-        currentView = viewToGoTo
-        
-        updateView()
+    public func startNextPartOfQuestion(lastIdentifier: String) {
+        qManager.continueQuestion(lastIdentifier: lastIdentifier)
     }
     
     private func updateView() {
@@ -79,6 +77,12 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    private func updateResponse(reponseName: String) {
+        currentView = QuestionType.Response
+        responseViewController.changeLabel(message: reponseName)
+        updateView()
+    }
+    
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
         addChild(childViewController)
         
@@ -103,7 +107,15 @@ class QuestionViewController: UIViewController {
 }
 
 extension QuestionViewController: QuestionViewControllerDelegate {
+    func changeTwoAnswerQuestionToShowResponse(responseName: String) {
+        updateResponse(reponseName: responseName)
+    }
+    
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
         updateTwoAnswer(questionText: questionText, buttonNames: buttonNames)
-        print("came from question view controller delegate")    }
+    }
+    
+    func twoAnswerQuestionIsFinished() {
+        
+    }
 }

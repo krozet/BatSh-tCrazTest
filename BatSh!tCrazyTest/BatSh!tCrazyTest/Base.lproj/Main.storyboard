@@ -206,21 +206,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-lr-qz3">
-                                <rect key="frame" x="192" y="542" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="ShowResponse:" destination="O3p-tt-h9E" eventType="touchUpInside" id="1Bc-Vs-cwd"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-jh-dum">
                                 <rect key="frame" x="16" y="347" width="382" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Qestions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-kh-nLS">
-                                <rect key="frame" x="155" y="253.5" width="104" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -231,10 +218,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-N6-cO9">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="leftButtonClicked:" destination="O3p-tt-h9E" eventType="touchUpInside" id="PEc-2e-LyQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-ZK-Bz1">
                                         <rect key="frame" x="195" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rightButtonClicked:" destination="O3p-tt-h9E" eventType="touchUpInside" id="ilV-iA-GZI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -244,12 +237,8 @@
                             <constraint firstItem="HIt-NM-Taf" firstAttribute="trailing" secondItem="ULb-jh-dum" secondAttribute="trailing" constant="16" id="2Ow-HK-TgE"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="16" id="4CB-5T-Jy4"/>
                             <constraint firstItem="kc2-ll-638" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="16" id="KF4-iN-H32"/>
-                            <constraint firstItem="ULb-jh-dum" firstAttribute="centerX" secondItem="wdQ-kh-nLS" secondAttribute="centerX" id="Pjf-KG-HPI"/>
                             <constraint firstItem="HIt-NM-Taf" firstAttribute="trailing" secondItem="kc2-ll-638" secondAttribute="trailing" constant="16" id="S9y-kt-A6N"/>
-                            <constraint firstItem="ULb-jh-dum" firstAttribute="top" secondItem="wdQ-kh-nLS" secondAttribute="bottom" constant="73" id="Szt-xB-8MB"/>
-                            <constraint firstItem="kc2-ll-638" firstAttribute="top" secondItem="Jaf-lr-qz3" secondAttribute="bottom" constant="65" id="bTE-tM-Cal"/>
                             <constraint firstItem="HIt-NM-Taf" firstAttribute="bottom" secondItem="kc2-ll-638" secondAttribute="bottom" constant="195" id="iu3-jx-M5N"/>
-                            <constraint firstItem="Jaf-lr-qz3" firstAttribute="leading" secondItem="HIt-NM-Taf" secondAttribute="leading" constant="192" id="oNV-tO-Uc2"/>
                             <constraint firstItem="ULb-jh-dum" firstAttribute="top" secondItem="Cwi-8P-zw0" secondAttribute="top" constant="347" id="wOm-Ad-8wO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HIt-NM-Taf"/>
@@ -272,30 +261,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Showns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68Q-Zy-fGI">
-                                <rect key="frame" x="158" y="246" width="98" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35p-3s-hw1">
-                                <rect key="frame" x="91" y="535" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Two Questions"/>
-                                <connections>
-                                    <action selector="ShowTwoAnswers:" destination="hU2-l5-LNb" eventType="touchUpInside" id="Whu-zz-Ir9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5i-tc-QLC">
-                                <rect key="frame" x="228" y="535" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rorschach Test"/>
-                                <connections>
-                                    <action selector="ShowRorschachTest:" destination="hU2-l5-LNb" eventType="touchUpInside" id="tYA-d8-xzO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85I-qP-Z5U">
-                                <rect key="frame" x="16" y="338" width="382" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85I-qP-Z5U">
+                                <rect key="frame" x="16" y="338" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -307,8 +274,6 @@
                             <constraint firstItem="85I-qP-Z5U" firstAttribute="leading" secondItem="cgc-O0-2ob" secondAttribute="leading" constant="16" id="7pI-tR-kJl"/>
                             <constraint firstItem="cgc-O0-2ob" firstAttribute="trailing" secondItem="85I-qP-Z5U" secondAttribute="trailing" constant="16" id="PQN-LV-gkF"/>
                             <constraint firstItem="85I-qP-Z5U" firstAttribute="top" secondItem="nmr-vF-pON" secondAttribute="top" constant="338" id="SME-LP-Yr3"/>
-                            <constraint firstItem="85I-qP-Z5U" firstAttribute="centerX" secondItem="68Q-Zy-fGI" secondAttribute="centerX" id="VaY-rr-wcY"/>
-                            <constraint firstItem="85I-qP-Z5U" firstAttribute="top" secondItem="68Q-Zy-fGI" secondAttribute="bottom" constant="71" id="wYR-iz-xQc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgc-O0-2ob"/>
                         <connections>

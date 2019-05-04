@@ -43,11 +43,11 @@ class ResponseViewController: UIViewController {
     
     @IBAction func ShowRorschachTest(_ sender: Any) {
         let viewController = parent as! QuestionViewController
-        viewController.questionFinished(label: "From Research", viewToGoTo: QuestionType.RorschachTest)
+        viewController.startNextPartOfQuestion(lastIdentifier: "From Research")
     }
     
     @IBAction func ShowTwoAnswers(_ sender: Any) {
         let viewController = parent as! QuestionViewController
-        viewController.questionFinished(label: "From Research", viewToGoTo: QuestionType.TwoAnswer)
+        viewController.startNextPartOfQuestion(lastIdentifier: "From Research")
     }
 }

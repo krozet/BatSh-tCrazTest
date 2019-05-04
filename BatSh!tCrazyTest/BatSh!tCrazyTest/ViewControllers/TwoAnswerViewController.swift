@@ -35,6 +35,16 @@ class TwoAnswerViewController: UIViewController {
         self.questionText.text = questionText
     }
     
+    @IBAction func rightButtonClicked(_ sender: Any) {
+        let viewController = parent as! QuestionViewController
+        viewController.startNextPartOfQuestion(lastIdentifier: rightButton.currentTitle ?? "")
+        
+    }
+    @IBAction func leftButtonClicked(_ sender: Any) {
+        let viewController = parent as! QuestionViewController
+        viewController.startNextPartOfQuestion(lastIdentifier: leftButton.currentTitle ?? "")
+    }
+    
     func changeButtonText(buttonTexts: [String]) {
         leftButton.setTitle(buttonTexts[0], for: .normal)
         rightButton.setTitle(buttonTexts[1], for: .normal)
@@ -42,6 +52,6 @@ class TwoAnswerViewController: UIViewController {
     
     @IBAction func ShowResponse(_ sender: UIButton) {
         let viewController = parent as! QuestionViewController
-        viewController.questionFinished(label: "From Two Answer", viewToGoTo: QuestionType.Response)
+        viewController.startNextPartOfQuestion(lastIdentifier: "From Two Answer")
     }
 }

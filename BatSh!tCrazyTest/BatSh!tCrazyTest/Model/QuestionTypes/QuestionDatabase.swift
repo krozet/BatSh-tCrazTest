@@ -43,7 +43,7 @@ class QuestionDatabase {
     
     public func createFlipACointQuestion() {
         let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
-        let questionText = "I flip a coin 99 times and all 99 times it lands heads up. WHat side wil lland face up on the 100th flip?"
+        let questionText = "I flip a coin 99 times and all 99 times it lands heads up. What side wil lland face up on the 100th flip?"
         let buttonNames = ["Q1.Ch1-1(Heads).FQ1-1", "Q1.Ch1-2(Tails).FQ1-2"]
         taQuestion.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)
         taQuestion.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-1", buttonText: "Heads", nextResponseName: nil, nextQuestionName: "Q1.Ch1-1(Heads).FQ1-1", isNextAQuestion: true, end: false)
@@ -55,7 +55,7 @@ class QuestionDatabase {
         taQuestion.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", buttonText: "Tails", nextResponseName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", responseText: "Are you normally this distrusting of others?", nextQuestionName: nil, end: true)
         
-        taQuestion.insertQuestion(questionName: "Q1.Ch1-2(Tails).FQ1-2", questionText: "What if I reassured you the coin was fair?", buttonNames: ["Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4"])
+        taQuestion.insertQuestion(questionName: "Q1.Ch1-2(Tails).FQ1-2", questionText: "What if I flip the coin 999 times and all 999 times it lands heads up. What side will land face up on the 1000th flip?", buttonNames: ["Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4"])
         taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", buttonText: "Heads", nextResponseName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", responseText: "Are you normally so easily swayed?", nextQuestionName: nil, end: true)
         taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", buttonText: "Tails", nextResponseName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", nextQuestionName: nil, isNextAQuestion: false, end: false)

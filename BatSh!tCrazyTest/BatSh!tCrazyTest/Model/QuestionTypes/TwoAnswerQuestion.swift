@@ -23,7 +23,7 @@ class TwoAnswerQuestion: Question {
     }
     
     public override func startQuestion() {
-    questionManagerDelegate.changeTwoAnswerQuestionToShowQuestion(questionText: getQuestionText(questionName: currentName),
+        questionManagerDelegate.changeTwoAnswerQuestionToShowQuestion(questionText: getQuestionText(questionName: currentName),
         buttonNames: getButtonTexts(questionName: currentName!))
         //changeTwoAnswerQuestionToShowQuestion(getQuestionText(questionName: currentName), getButtonTexts(questionName: currentName!))
     }
@@ -36,30 +36,36 @@ class TwoAnswerQuestion: Question {
             let buttonName = getButtonNameFromTextAndCurrentName(buttonText: name)
             // checks if this button will end the question
             if isButtonEnd(buttonName: buttonName) {
-                //return (true, true, "", [""])
+                questionManagerDelegate.twoAnswerQuestionIsFinished()
+                return
+
             }
             
             // checks if needs to show a question or response next
             if doesButtonShowQuestionNext(buttonName: buttonName) {
                 // show a question next
                 currentName = getNextQuestionName(buttonName: buttonName)
-                //let (nextName, buttonTexts) = startQuestion()
-                //return (false, true, nextName, buttonTexts)
+                startQuestion()
+                return
             } else {
                // show a resposne next
                 currentName = getNextResponseName(buttonName: buttonName)
-                // checks if this response will end the question
-                if isResponseEnd(responseName: currentName!) {
-                    //return (true, false, getResponse(responseName: currentName), [""])
-                } else {
-                    //return (false, false, getResponse(responseName: currentName), [""])
-                }
+                questionManagerDelegate.changeTwoAnswerQuestionToShowResponse(responseText: getResponse(responseName: currentName))
+                return
+            }
+        } else {
+            // name is a ResponseText, so get reponse name and check if it is the end
+            let responseName = getResponseNameFromResposneText(responseText: name)
+            if isResponseEnd(responseName: responseName) {
+                questionManagerDelegate.twoAnswerQuestionIsFinished()
+                return
+            } else {
+                // there is another question after response
+                currentName = getNextQuestionNameFromResponse(responseName: responseName)
+                startQuestion()
+                return
             }
         }
-        // name is a Response, so get the next question
-        currentName = getNextQuestionNameFromResponse(responseName: name)
-        //let (nextQuestionName, nextButtonTexts) = startQuestion()
-        //return (false, true, nextQuestionName, nextButtonTexts)
     }
 }
 

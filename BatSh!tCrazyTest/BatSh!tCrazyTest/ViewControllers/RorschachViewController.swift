@@ -35,6 +35,6 @@ class RorschachViewController: UIViewController {
 
     @IBAction func ShowResponse(_ sender: Any) {
         let viewController = parent as! QuestionViewController
-        viewController.questionFinished(label: "From Rorschach", viewToGoTo: QuestionType.Response)
+        viewController.startNextPartOfQuestion(lastIdentifier: "From Rorschach")
     }
 }

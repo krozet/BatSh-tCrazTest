@@ -9,7 +9,7 @@
 import Foundation
 
 class QuestionDatabase {
-    var totalNumberOfTwoAnswerQuestions = 1
+    var totalNumberOfTwoAnswerQuestions = 2
     var twoAnswerQuestions = [TwoAnswerQuestion]()
     var rorschachQuestions = [RorschachQuestion]()
     var questionManager: QuestionManager
@@ -26,7 +26,6 @@ class QuestionDatabase {
     
     public func generateRandomTwoAnswerQuestions() {
         var switchValues = [Int](0...totalNumberOfTwoAnswerQuestions-1)
-        
         while switchValues.count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(switchValues.count)))
             let randomNum = switchValues[arrayKey]
@@ -35,6 +34,8 @@ class QuestionDatabase {
             switch (randomNum) {
             case 0:
                 createFlipACointQuestion()
+            case 1:
+                createFollowDirectionsQuestion()
             default:
                 break
             }
@@ -43,6 +44,7 @@ class QuestionDatabase {
     
     public func createFlipACointQuestion() {
         let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
+        
         let questionText = "I flip a coin 99 times and all 99 times it lands heads up. What side wil lland face up on the 100th flip?"
         let buttonNames = ["Q1.Ch1-1(Heads).FQ1-1", "Q1.Ch1-2(Tails).FQ1-2"]
         taQuestion.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)
@@ -60,6 +62,29 @@ class QuestionDatabase {
         taQuestion.insertResponse(responseName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", responseText: "Are you normally so easily swayed?", nextQuestionName: nil, end: true)
         taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", buttonText: "Tails", nextResponseName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", responseText: "Do you root for the underdog because you see yourself as one?", nextQuestionName: nil, end: true)
+        
+        twoAnswerQuestions.append(taQuestion)
+    }
+    
+    public func createFollowDirectionsQuestion() {
+        let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
+        
+        taQuestion.insertQuestion(questionName: "Q3: Follow Directions", questionText: "Click Yes.", buttonNames: ["Q3.Ch1-1(Yes).FQ1", "Q3.Ch1-2(No).FQ2"])
+        taQuestion.insertButton(buttonName: "Q3.Ch1-1(Yes).FQ1", buttonText: "Yes", nextResponseName: nil, nextQuestionName: "Q3.Ch1-1(Yes).FQ1", isNextAQuestion: true, end: false)
+        taQuestion.insertButton(buttonName: "Q3.Ch1-2(No).FQ2", buttonText: "No", nextResponseName: nil, nextQuestionName: "Q3.Ch1-2(No).FQ2", isNextAQuestion: true, end: false)
+        
+        taQuestion.insertQuestion(questionName: "Q3.Ch1-1(Yes).FQ1", questionText: "Click No.", buttonNames: ["Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2"])
+        taQuestion.insertButton(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", buttonText: "Yes", nextResponseName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", nextQuestionName: nil, isNextAQuestion: false, end: false)
+        taQuestion.insertButton(buttonName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", buttonText: "No", nextResponseName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", nextQuestionName: nil, isNextAQuestion: false, end: false)
+        
+        taQuestion.insertQuestion(questionName: "Q3.Ch1-2(No).FQ2", questionText: "Click No.", buttonNames: ["Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", "Q3.Ch1-2(No).FQ2-2(No).RE1-4"])
+        taQuestion.insertButton(buttonName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", buttonText: "Yes", nextResponseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", nextQuestionName: nil, isNextAQuestion: false, end: false)
+        taQuestion.insertButton(buttonName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", buttonText: "No", nextResponseName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", nextQuestionName: nil, isNextAQuestion: false, end: false)
+        
+        taQuestion.insertResponse(responseName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", responseText: "Do you pride yourself in your unpredictability?", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", responseText: "There are few things as nauseating as pure obedience.", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Do you feel strong taking control where you can?", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", responseText: "Do you pride yourself in your unpredictability?", nextQuestionName: nil, end: true)
         
         twoAnswerQuestions.append(taQuestion)
     }

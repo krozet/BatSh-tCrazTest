@@ -58,9 +58,10 @@ class QuestionManager {
     }
     
     private func loadQuestions() {
-        var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) = qDatabase!.getTestQuestions()
+        var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) =
+            qDatabase!.getTestQuestions()
         var question: Question
-        
+        print("numofquestions: \(numOfQuestions)")
         while numOfQuestions > 0 {
             var pushedQuestion = false
             let randomIndex = Int.random(in: 0 ..< QuestionType.NumberOfQuestionTypes)

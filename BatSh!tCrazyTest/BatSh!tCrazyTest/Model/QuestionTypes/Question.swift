@@ -20,6 +20,7 @@ class Question {
     var responses = [response]()
     var currentName: String?
     var isCurrentNameQuestion: Bool
+    var showingResponse: Bool
     var questionManagerDelegate: QuestionManager
     
     struct question {
@@ -46,6 +47,7 @@ class Question {
     
     init(questionManager: QuestionManager) {
         isCurrentNameQuestion = true
+        showingResponse = false
         questionManagerDelegate = questionManager
     }
     
@@ -214,10 +216,18 @@ class Question {
         return buttons[index].end
     }
     
+    public func isShowingResponse() -> Bool {
+        return showingResponse
+    }
+    
     public func isQuestionFinished(isButton: Bool, name: String) -> Bool {
         if isButton {
             return isButtonEnd(buttonName: name)
         }
         return isResponseEnd(responseName: name)
+    }
+    
+    public func setShowingResponse(showing: Bool) {
+        showingResponse = showing
     }
 }

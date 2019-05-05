@@ -52,6 +52,16 @@ class QuestionViewController: UIViewController {
         qManager.continueQuestion(lastIdentifier: lastIdentifier)
     }
     
+    public func startNextQuestion() {
+        currentView = qManager.queueNextQuetion()
+        if (currentView != -1) {
+            qManager.startNextQuestion()
+        } else {
+            // test is finished
+            print("Test is done!")
+        }
+    }
+    
     private func updateView() {
         twoAnswerViewController.view.isHidden = true
         rorschachTestViewController.view.isHidden = true
@@ -116,6 +126,6 @@ extension QuestionViewController: QuestionViewControllerDelegate {
     }
     
     func twoAnswerQuestionIsFinished() {
-        
+        startNextQuestion()
     }
 }

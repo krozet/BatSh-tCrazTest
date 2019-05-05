@@ -52,8 +52,7 @@ class QuestionManager {
         
         taQuestion = TwoAnswerQuestion(questionManager: self)
         qDatabase = QuestionDatabase(questionManager: self)
-        
-        self.createFirstQuestion()
+
         loadQuestions()
     }
     
@@ -61,7 +60,7 @@ class QuestionManager {
         var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) =
             qDatabase!.getTestQuestions()
         var question: Question
-        print("numofquestions: \(numOfQuestions)")
+
         while numOfQuestions > 0 {
             var pushedQuestion = false
             let randomIndex = Int.random(in: 0 ..< QuestionType.NumberOfQuestionTypes)
@@ -122,38 +121,35 @@ class QuestionManager {
     public func continueQuestion(lastIdentifier: String) {
         switch (getCurrentQuestionType()) {
         case QuestionType.TwoAnswer:
-            currentQuestion?.next(isButton: true, name: lastIdentifier)
+            if (currentQuestion?.isShowingResponse())! {
+                currentQuestion?.next(isButton: false, name: lastIdentifier)
+            } else {
+                currentQuestion?.next(isButton: true, name: lastIdentifier)
+            }
         case QuestionType.RorschachTest:
             return
         case QuestionType.Response:
-            currentQuestion?.next(isButton: false, name: lastIdentifier)
+            return
         default:
             return
         }
     }
     
-    public func createFirstQuestion() {
-        let questionText = "I flip a coin 99 times and all 99 times it lands heads up. WHat side wil lland face up on the 100th flip?"
-        let buttonNames = ["Q1.Ch1-1(Heads).FQ1-1", "Q1.Ch1-2(Tails).FQ1-2"]
-        taQuestion!.insertQuestion(questionName: "Q1: Flip A Coin", questionText: questionText, buttonNames: buttonNames)
-        taQuestion!.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-1", buttonText: "Heads", nextResponseName: nil, nextQuestionName: "Q1.Ch1-1(Heads).FQ1-1", isNextAQuestion: true, end: false)
-        taQuestion!.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2", buttonText: "Tails", nextResponseName: nil, nextQuestionName: "Q1.Ch1-2(Tails).FQ1-2", isNextAQuestion: true, end: false)
-    }
-    
-    
 }
 
 extension QuestionManager: QuestionManagerDelegate {
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
+        currentQuestion?.setShowingResponse(showing: false)
         questionViewControllerDelegate.changeTwoAnswerQuestionToShowQuestion(questionText: questionText, buttonNames: buttonNames)
     }
     
     func changeTwoAnswerQuestionToShowResponse(responseText: String) {
+        currentQuestion?.setShowingResponse(showing: true)
         questionViewControllerDelegate.changeTwoAnswerQuestionToShowResponse(responseName: responseText)
     }
     
     func twoAnswerQuestionIsFinished() {
-        
+        questionViewControllerDelegate.twoAnswerQuestionIsFinished()
     }
     
     

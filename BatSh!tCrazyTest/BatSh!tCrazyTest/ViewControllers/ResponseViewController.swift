@@ -34,7 +34,8 @@ class ResponseViewController: UIViewController {
     }
     */
     @objc func gestureRecognizer() {
-        print("TAP")
+        let viewController = parent as! QuestionViewController
+        viewController.startNextPartOfQuestion(lastIdentifier: messageLabel.text!)
     }
     
     func changeLabel(message: String) {

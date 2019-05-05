@@ -56,8 +56,7 @@ class TwoAnswerQuestion: Question {
         } else {
             // name is a ResponseText, so get reponse name and check if it is the end
             let responseName = getResponseNameFromResposneText(responseText: name)
-            if isResponseEnd(responseName: responseName) {
-                questionManagerDelegate.twoAnswerQuestionIsFinished()
+            if isResponseEnd(responseName: responseName) {                questionManagerDelegate.twoAnswerQuestionIsFinished()
                 return
             } else {
                 // there is another question after response

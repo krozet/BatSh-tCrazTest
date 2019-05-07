@@ -45,10 +45,12 @@ class QuestionManager {
     var questionStack: Stack
     var currentQuestion: Question?
     var questionViewControllerDelegate: QuestionViewController
+    var sanityPointsManager: SanityPointsManager
     
     init(questionViewController: QuestionViewController) {
         questionStack = Stack()
         questionViewControllerDelegate = questionViewController
+        sanityPointsManager = SanityPointsManager()
         
         taQuestion = TwoAnswerQuestion(questionManager: self)
         qDatabase = QuestionDatabase(questionManager: self)
@@ -124,6 +126,7 @@ class QuestionManager {
             if (currentQuestion?.isShowingResponse())! {
                 currentQuestion?.next(isButton: false, name: lastIdentifier)
             } else {
+                sanityPointsManager.updateSanityPoints(sanityPoints: (currentQuestion?.getButtonSanityPointsFromButtonText(buttonText: lastIdentifier))!)
                 currentQuestion?.next(isButton: true, name: lastIdentifier)
             }
         case QuestionType.RorschachTest:
@@ -151,6 +154,4 @@ extension QuestionManager: QuestionManagerDelegate {
     func twoAnswerQuestionIsFinished() {
         questionViewControllerDelegate.twoAnswerQuestionIsFinished()
     }
-    
-    
 }

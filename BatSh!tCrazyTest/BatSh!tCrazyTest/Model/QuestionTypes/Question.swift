@@ -22,6 +22,7 @@ class Question {
     var isCurrentNameQuestion: Bool
     var showingResponse: Bool
     var questionManagerDelegate: QuestionManager
+    var sanityValueTracker = SanityPoints()
     
     struct question {
         let questionName: String
@@ -36,6 +37,19 @@ class Question {
         let nextQuestionName: String?
         let isNextAQuestion: Bool
         let end: Bool
+        var sanityPoints: SanityPoints
+        
+        mutating func addSanityPoint(sanityPoint: Int) {
+            sanityPoints.increaseSanityPoint(sanityPoint: sanityPoint)
+        }
+        
+        func getSanityValues() -> [Int] {
+            return sanityPoints.getSanityValues()
+        }
+        
+        func getSanityPoints() -> SanityPoints {
+            return sanityPoints
+        }
     }
     
     struct response {
@@ -69,7 +83,7 @@ class Question {
     }
     
     public func insertButton(buttonName: String, buttonText: String, nextResponseName: String?, nextQuestionName: String?, isNextAQuestion: Bool, end: Bool) {
-        buttons.append(button(buttonName: buttonName, buttonText: buttonText, nextResponseName: nextResponseName, nextQuestionName: nextQuestionName, isNextAQuestion: isNextAQuestion, end: end))
+        buttons.append(button(buttonName: buttonName, buttonText: buttonText, nextResponseName: nextResponseName, nextQuestionName: nextQuestionName, isNextAQuestion: isNextAQuestion, end: end, sanityPoints: SanityPoints()))
     }
     
     public func insertResponse(responseName: String, responseText: String, nextQuestionName: String?, end: Bool) {
@@ -135,6 +149,32 @@ class Question {
         }
         
         return questions[index].buttonNames
+    }
+    
+    public func getButtonSanityValuesFromButtonName(buttonName: String) -> [Int] {
+        let index = buttons.firstIndex(where: {
+            $0.buttonName == buttonName
+        }) ?? 0
+        
+        return buttons[index].getSanityValues()
+    }
+    
+    public func getButtonSanityValuesFromButtonText(buttonText: String) -> [Int] {
+        let buttonName = getButtonNameFromTextAndCurrentName(buttonText: buttonText)
+        return getButtonSanityValuesFromButtonName(buttonName: buttonName)
+    }
+    
+    public func getButtonSanityPointsFromButtonName(buttonName: String) -> SanityPoints {
+        let index = buttons.firstIndex(where: {
+            $0.buttonName == buttonName
+        }) ?? 0
+        
+        return buttons[index].getSanityPoints()
+    }
+    
+    public func getButtonSanityPointsFromButtonText(buttonText: String) -> SanityPoints {
+        let buttonName = getButtonNameFromTextAndCurrentName(buttonText: buttonText)
+        return getButtonSanityPointsFromButtonName(buttonName: buttonName)
     }
     
     public func getButtonText(buttonName: String) -> String {
@@ -229,5 +269,14 @@ class Question {
     
     public func setShowingResponse(showing: Bool) {
         showingResponse = showing
+    }
+    
+    public func setButtonSantiyValue(buttonName: String, sanityPoint: Int) {
+        var index = 0
+        index = buttons.firstIndex(where: {
+            $0.buttonName == buttonName
+        }) ?? 0
+        
+        buttons[index].addSanityPoint(sanityPoint: sanityPoint)
     }
 }

@@ -34,7 +34,13 @@ class QuestionViewController: UIViewController {
         
         return viewController
     }()
-    
+    lazy var resultsViewController: ResultsViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        self.addViewControllerAsChildViewController(childViewController: viewController)
+        
+        return viewController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +64,25 @@ class QuestionViewController: UIViewController {
             qManager.startNextQuestion()
         } else {
             // test is finished
+            showResults()
             print("Test is done!")
         }
     }
     
-    private func updateView() {
+    private func showResults() {
+        hideAllViews()
+        resultsViewController.view.isHidden = false
+    }
+    
+    private func hideAllViews() {
         twoAnswerViewController.view.isHidden = true
         rorschachTestViewController.view.isHidden = true
         responseViewController.view.isHidden = true
+        resultsViewController.view.isHidden = true
+    }
+    
+    private func updateView() {
+        hideAllViews()
         
         switch (currentView) {
         case QuestionType.TwoAnswer:
@@ -75,7 +92,7 @@ class QuestionViewController: UIViewController {
         case QuestionType.Response:
             responseViewController.view.isHidden = false
         default:
-            responseViewController.view.isHidden = false
+            break
         }
     }
     

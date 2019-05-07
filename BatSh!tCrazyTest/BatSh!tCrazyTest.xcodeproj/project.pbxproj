@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		A10E6690227B41CC009FEF26 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E668F227B41CC009FEF26 /* Question.swift */; };
 		A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */; };
+		A146EA6A2280FC7E00C5065A /* SantiyPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146EA692280FC7E00C5065A /* SantiyPoints.swift */; };
+		A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA3362228218A800A69408 /* SanityPointsManager.swift */; };
 		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
-		A1DE481E2277727000364AE9 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481D2277727000364AE9 /* TestManager.swift */; };
 		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
 		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
 		A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */; };
@@ -49,8 +50,9 @@
 /* Begin PBXFileReference section */
 		A10E668F227B41CC009FEF26 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDatabase.swift; sourceTree = "<group>"; };
+		A146EA692280FC7E00C5065A /* SantiyPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantiyPoints.swift; sourceTree = "<group>"; };
+		A1AA3362228218A800A69408 /* SanityPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityPointsManager.swift; sourceTree = "<group>"; };
 		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
-		A1DE481D2277727000364AE9 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
 		A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RorschachQuestion.swift; sourceTree = "<group>"; };
@@ -104,8 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				A1DE48212277752200364AE9 /* QuestionTypes */,
-				A1DE481D2277727000364AE9 /* TestManager.swift */,
 				A1DE481F2277728F00364AE9 /* QuestionManager.swift */,
+				A146EA692280FC7E00C5065A /* SantiyPoints.swift */,
+				A1AA3362228218A800A69408 /* SanityPointsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */,
 				A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */,
+				A146EA6A2280FC7E00C5065A /* SantiyPoints.swift in Sources */,
 				FA0F4FBD227516E100BC876F /* RorschachViewController.swift in Sources */,
 				FA9358592272427F006E521C /* IntroductionViewController.swift in Sources */,
 				FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */,
@@ -332,8 +336,8 @@
 				A10E6690227B41CC009FEF26 /* Question.swift in Sources */,
 				FA93585F2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld in Sources */,
 				A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */,
+				A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */,
 				A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */,
-				A1DE481E2277727000364AE9 /* TestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JY5S459J8L;
 				INFOPLIST_FILE = "BatSh!tCrazyTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,6 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JY5S459J8L;
 				INFOPLIST_FILE = "BatSh!tCrazyTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

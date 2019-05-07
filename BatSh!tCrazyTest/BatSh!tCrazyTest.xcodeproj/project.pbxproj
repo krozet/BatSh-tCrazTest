@@ -11,6 +11,7 @@
 		A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */; };
 		A146EA6A2280FC7E00C5065A /* SantiyPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146EA692280FC7E00C5065A /* SantiyPoints.swift */; };
 		A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA3362228218A800A69408 /* SanityPointsManager.swift */; };
+		A1C2B45F22823EBB0070BC4B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2B45E22823EBB0070BC4B /* Utility.swift */; };
 		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
 		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
 		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
@@ -52,6 +53,7 @@
 		A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDatabase.swift; sourceTree = "<group>"; };
 		A146EA692280FC7E00C5065A /* SantiyPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantiyPoints.swift; sourceTree = "<group>"; };
 		A1AA3362228218A800A69408 /* SanityPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityPointsManager.swift; sourceTree = "<group>"; };
+		A1C2B45E22823EBB0070BC4B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				FA93586222724281006E521C /* LaunchScreen.storyboard */,
 				FA93586522724281006E521C /* Info.plist */,
 				FA93585D2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld */,
+				A1C2B45E22823EBB0070BC4B /* Utility.swift */,
 			);
 			path = "BatSh!tCrazyTest";
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */,
 				A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */,
 				A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */,
+				A1C2B45F22823EBB0070BC4B /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,9 +16,12 @@ class TwoAnswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setGradientBackground(gradientBackgroungColors: Utility.GB_MINT_TURQUOISE)
         // Do any additional setup after loading the view.
     }
+    
+
     
 
     /*

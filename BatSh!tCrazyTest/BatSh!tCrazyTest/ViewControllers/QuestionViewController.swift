@@ -44,7 +44,12 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let layer = CAGradientLayer()
+        layer.frame = view.bounds
+        layer.colors = [UIColor(rgb: 0x98FF98), UIColor(rgb: 0x40E0D0)]
+        layer.startPoint = CGPoint(x: 0,y: 0)
+        layer.endPoint = CGPoint(x: 1,y: 1)
+        view.layer.addSublayer(layer)
         // Do any additional setup after loading the view.
         qManager = QuestionManager(questionViewController: self)
         currentView = qManager.queueNextQuetion()

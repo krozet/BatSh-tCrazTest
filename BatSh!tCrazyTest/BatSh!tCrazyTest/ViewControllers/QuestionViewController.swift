@@ -44,13 +44,11 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentView = QuestionType.TwoAnswer
-        
 
         // Do any additional setup after loading the view.
-        updateView()
         qManager = QuestionManager(questionViewController: self)
         currentView = qManager.queueNextQuetion()
+        updateView()
         qManager.startNextQuestion()
     }
     

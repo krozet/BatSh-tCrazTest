@@ -14,6 +14,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setGradientBackground(gradientBackgroungColors: Utility.GB_PASTELPINK_SALMON)
     }
     
 

@@ -11,7 +11,9 @@ import UIKit
 
 class Utility {
     public static var GB_MINT_TURQUOISE = [UIColor(rgb: 0x98FF98).cgColor, UIColor(rgb: 0x40E0D0).cgColor]
-    
+    public static var GB_SALMON_MINT = [UIColor(rgb: 0xEB9099).cgColor, UIColor(rgb: 0x98FF98).cgColor]
+    public static var GB_PASTELPINK_SALMON = [UIColor(rgb: 0x0F5D0E1).cgColor, UIColor(rgb: 0xEB9099).cgColor]
+
 }
 
 extension UIViewController {

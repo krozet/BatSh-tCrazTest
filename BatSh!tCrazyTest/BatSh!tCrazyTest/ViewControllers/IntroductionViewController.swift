@@ -16,7 +16,7 @@ class IntroductionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //setGradientBackground(gradientBackgroungColors: Utility.GB_MINT_TURQUOISE)
-        let imageData = NSData(contentsOf: Bundle.main.url(forResource: "brain", withExtension: "gif")!)
+        let imageData = NSData(contentsOf: Bundle.main.url(forResource: "brain_slow", withExtension: "gif")!)
         let imageGif = UIImage.gifWithData(data: imageData!)
         let imageView = UIImageView(image: imageGif)
         imageView.frame = CGRect(x: 0.0, y:0.0, width: view.bounds.width, height: view.bounds.height)

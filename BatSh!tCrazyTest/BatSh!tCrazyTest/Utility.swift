@@ -37,6 +37,30 @@ extension UIViewController {
 }
 
 extension UIView {
+    // Name this function in a way that makes sense to you...
+    // slideFromLeft, slideRight, slideLeftToRight, etc. are great alternative names
+    func slideFromRight(duration: TimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
+        // Create a CATransition animation
+        let slideFromRightTransition = CATransition()
+        
+        // Set its callback delegate to the completionDelegate that was provided (if any)
+        if let delegate: AnyObject = completionDelegate {
+            slideFromRightTransition.delegate = delegate as? CAAnimationDelegate
+        }
+        
+        // Customize the animation's properties
+        slideFromRightTransition.type = CATransitionType.push
+        slideFromRightTransition.subtype = CATransitionSubtype.fromRight
+        slideFromRightTransition.duration = duration
+        slideFromRightTransition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        slideFromRightTransition.fillMode = CAMediaTimingFillMode.removed
+        
+        // Add the animation to the View's layer
+        self.layer.add(slideFromRightTransition, forKey: "slideInFromRightTransition")
+    }
+}
+
+extension UIView {
     func setGradientBackground(colours: [Any]) -> Void {
         self.setGradientBackground(colours: colours, locations: nil)
     }

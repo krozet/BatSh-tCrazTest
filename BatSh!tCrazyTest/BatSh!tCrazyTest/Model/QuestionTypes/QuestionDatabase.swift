@@ -11,6 +11,7 @@ import Foundation
 class QuestionDatabase {
     var totalNumberOfTwoAnswerQuestions = 2
     var twoAnswerQuestions = [TwoAnswerQuestion]()
+    let twoAnswerFunctions = [createFlipACointQuestion, createFollowDirectionsQuestion, createRiskTaker, createFollowDirectionsQuestion, createForest, createPirateCaptain, createJar, createCookie, createHideAndSeek, createLateOrEarly, createPlacementOfTrust, createMilkInCereal]
     var rorschachQuestions = [RorschachQuestion]()
     var questionManager: QuestionManager
 
@@ -25,15 +26,16 @@ class QuestionDatabase {
     }
 
     public func generateRandomTwoAnswerQuestions() {
-        var switchValues = [Int](0...totalNumberOfTwoAnswerQuestions-1)
-        while switchValues.count > 0 {
+        var switchValues = [Int](0...twoAnswerFunctions.count-1)
+        var count = totalNumberOfTwoAnswerQuestions
+
+        while count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(switchValues.count)))
             let randomNum = switchValues[arrayKey]
             switchValues.remove(at: arrayKey)
-            let functions = [createJar, createCookie]
-            functions[0]()
-            functions[1]()
+            twoAnswerFunctions[randomNum](self)()
 
+            count -= 1
             /*
             switch (randomNum) {
               case 0:
@@ -200,8 +202,8 @@ class QuestionDatabase {
       let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
 
       taQuestion.insertQuestion(questionName: "Q12: Placement of Trust", questionText: "Do you tend to place your trust more in yourself, or others?", buttonNames: ["Q12.Ch1-1(Yourself)", "Q12.Ch1-2(Other people)"])
-      taQuestion.insertButton(buttonName: "Q12.Ch1-1(Yourself)", buttonText: "Before the cereal", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
-      taQuestion.insertButton(buttonName: "Q12.Ch1-2(Other people)", buttonText: "After the cereal", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.insertButton(buttonName: "Q12.Ch1-1(Yourself)", buttonText: "Yourself", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.insertButton(buttonName: "Q12.Ch1-2(Other people)", buttonText: "Other people", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -219,7 +221,7 @@ class QuestionDatabase {
     public func createCookie() {
       let taQuestion = TwoAnswerQuestion(questionManager: questionManager)
 
-      taQuestion.insertQuestion(questionName: "Q16: Cookie", questionText: "Tuesday has finally come: chocolate chip cookie day. You wait patiently in line and take the last chocolate chip cookie.\n\nA kid twice your size taps you on the shoulder and claims you stole his cookie.\n\nHe insists you give it back. What is your first natural instinct?", buttonNames: ["Q14.Ch1-1(Half full)", "Q14.Ch1-2(Half empty)"])
+      taQuestion.insertQuestion(questionName: "Q16: Cookie", questionText: "Tuesday has finally come: chocolate chip cookie day. You wait patiently in line and take the last chocolate chip cookie.\n\nA kid twice your size taps you on the shoulder and claims you stole his cookie.\n\nHe insists you give it back. What is your first natural instinct?", buttonNames: ["Q16.Ch1-1(Fight)", "Q16.Ch1-2(Flight"])
       taQuestion.insertButton(buttonName: "Q16.Ch1-1(Fight)", buttonText: "Fight", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
       taQuestion.insertButton(buttonName: "Q16.Ch1-2(Flight)", buttonText: "Flight", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
 

@@ -207,11 +207,13 @@ class Question {
     
     public func getResponseNameFromResposneText(responseText: String) -> String {
         for res in responses {
-            if res.responseText == responseText {
+            if res.responseName == currentName! && res.responseText == responseText {
                 return res.responseName
             }
         }
         print("check for erorr in getResponseNameFromResponseText")
+        print("currentName: \(currentName!)")
+        print("responseText: \(responseText)")
         return currentName!
     }
     

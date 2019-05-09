@@ -15,6 +15,8 @@
 		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
 		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
 		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
+		A1E2E57A22848E4500F7B6E9 /* brain.gif in Resources */ = {isa = PBXBuildFile; fileRef = A1E2E57922848E4400F7B6E9 /* brain.gif */; };
+		A1E2E57C228493FB00F7B6E9 /* brain_slow.gif in Resources */ = {isa = PBXBuildFile; fileRef = A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */; };
 		A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */; };
 		FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */; };
 		FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB72274F80500BC876F /* ResultsViewController.swift */; };
@@ -57,6 +59,8 @@
 		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
+		A1E2E57922848E4400F7B6E9 /* brain.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = brain.gif; path = ../../Assets/brain.gif; sourceTree = "<group>"; };
+		A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = brain_slow.gif; path = ../../Assets/brain_slow.gif; sourceTree = "<group>"; };
 		A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RorschachQuestion.swift; sourceTree = "<group>"; };
 		FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FA0F4FB72274F80500BC876F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				FA93586022724281006E521C /* Assets.xcassets */,
 				FA93586222724281006E521C /* LaunchScreen.storyboard */,
 				FA93586522724281006E521C /* Info.plist */,
+				A1E2E57922848E4400F7B6E9 /* brain.gif */,
+				A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */,
 				FA93585D2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld */,
 				A1C2B45E22823EBB0070BC4B /* Utility.swift */,
 			);
@@ -298,7 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E2E57C228493FB00F7B6E9 /* brain_slow.gif in Resources */,
 				FA93586422724281006E521C /* LaunchScreen.storyboard in Resources */,
+				A1E2E57A22848E4500F7B6E9 /* brain.gif in Resources */,
 				FA93586122724281006E521C /* Assets.xcassets in Resources */,
 				FA93585C2272427F006E521C /* Main.storyboard in Resources */,
 			);

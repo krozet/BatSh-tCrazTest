@@ -11,15 +11,10 @@ import UIKit
 import ImageIO
 
 struct GlobalVariable {
-    static var gbCurrentTopLeft = false
-  
-   public static func getGradientCorner() -> Bool {
-        adjustValue()
-        return GlobalVariable.gbCurrentTopLeft
-    }
-    
-    public static func adjustValue() {
-        GlobalVariable.gbCurrentTopLeft = !GlobalVariable.gbCurrentTopLeft
+    static var lastGBIndex = -1
+
+    public static func adjustValue(index: Int) {
+        GlobalVariable.lastGBIndex = index
     }
 }
 
@@ -30,30 +25,42 @@ class Utility {
     public static var PASTEL_PINK = UIColor(rgb: 0x0F5D0E1)
     public static var CHARCOAL = UIColor(rgb: 0x595B5A)
     public static var LIGHT_GREY = UIColor(rgb: 0x707271)
+
     public static var PURPLE = UIColor(rgb: 0xA239FF)
     public static var AQUA = UIColor(rgb: 0x00F8FF)
+    public static var PALE_PURPLE = UIColor(red: 150, green: 163, blue: 242)
+    public static var PALE_AQUA = UIColor(red: 166, green: 237, blue: 255)
+    public static var PALE_AQUAMARINE = UIColor(red: 192, green: 255, blue: 236)
+    public static var DARK_AQUA = UIColor(red: 1, green: 210, blue: 249)
+    public static var LIGHT_PALE_PURPLE = UIColor(red: 215, green: 212, blue: 255)
+    public static var DARK_TURQUOISE = UIColor(red: 69, green: 216, blue: 172)
 
     public static var GB_MINT_TURQUOISE = [MINT.cgColor, TURQUOISE.cgColor]
     public static var GB_SALMON_MINT = [SALMON.cgColor, MINT.cgColor]
     public static var GB_PASTELPINK_SALMON = [PASTEL_PINK.cgColor, SALMON.cgColor]
     public static var GB_LIGHTGREY_CHARCOAL = [LIGHT_GREY.cgColor, CHARCOAL.cgColor]
     public static var GB_CHARCOAL_LIGHTGREY = [CHARCOAL.cgColor, LIGHT_GREY.cgColor]
-    public static var GB_PURPLE_AQUA = [PURPLE.cgColor, AQUA.cgColor]
-    public static var GB_AQUA_PURPLE = [AQUA.cgColor, PURPLE.cgColor]
+
+    public static var GB_COLORS = [PURPLE.cgColor, AQUA.cgColor, PALE_PURPLE.cgColor, PALE_AQUA.cgColor, PALE_AQUAMARINE.cgColor, DARK_AQUA.cgColor, DARK_TURQUOISE.cgColor, LIGHT_PALE_PURPLE.cgColor]
+
+    public static func getGB() -> [Any] {
+        let firstColor = Int(arc4random_uniform(UInt32(GB_COLORS.count)))
+        var secondColor = Int(arc4random_uniform(UInt32(GB_COLORS.count)))
+
+        while firstColor == secondColor {
+            secondColor = Int(arc4random_uniform(UInt32(switchValues.count)))
+        }
+        return [GB_COLORS[firstColor], GB_COLORS[secondColor]]
+    }
 }
 
 extension UIViewController {
-    func setGradientBackground(gradientBackgroungColors: [Any], startTopLeft: Bool = true) {
+    func setGradientBackground(gradientBackgroungColors: [Any]) {
         let layer = CAGradientLayer()
         layer.frame = view.bounds
         layer.colors = gradientBackgroungColors
-        if startTopLeft {
-          layer.startPoint = CGPoint(x: 0,y: 0)
-          layer.endPoint = CGPoint(x: 1,y: 1)
-        } else {
-          layer.startPoint = CGPoint(x: 1,y: 0)
-          layer.endPoint = CGPoint(x: 0,y: 1)
-        }
+        layer.startPoint = CGPoint(x: 0.5,y: 0)
+        layer.endPoint = CGPoint(x: 0.5,y: 1)
 
         view.layer.insertSublayer(layer, at: 0)
     }

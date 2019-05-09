@@ -9,37 +9,37 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-    
+
     var qManager: QuestionManager!
     var currentView = -1
     var previousView = -1
-    
+
     lazy var twoAnswerViewController: TwoAnswerViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "TwoAnswerViewController") as! TwoAnswerViewController
         self.addViewControllerAsChildViewController(childViewController: viewController)
-        
+
         return viewController
     }()
     lazy var rorschachTestViewController: RorschachViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "RorschachViewController") as! RorschachViewController
         self.addViewControllerAsChildViewController(childViewController: viewController)
-        
+
         return viewController
     }()
     lazy var responseViewController: ResponseViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "ResponseViewController") as! ResponseViewController
         self.addViewControllerAsChildViewController(childViewController: viewController)
-        
+
         return viewController
     }()
     lazy var resultsViewController: ResultsViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
         self.addViewControllerAsChildViewController(childViewController: viewController)
-        
+
         return viewController
     }()
 
@@ -56,11 +56,11 @@ class QuestionViewController: UIViewController {
         currentView = qManager.queueNextQuetion()
         qManager.startNextQuestion()
     }
-    
+
     public func startNextPartOfQuestion(lastIdentifier: String) {
         qManager.continueQuestion(lastIdentifier: lastIdentifier)
     }
-    
+
     public func startNextQuestion() {
         previousView = currentView
         currentView = qManager.queueNextQuetion()
@@ -72,39 +72,39 @@ class QuestionViewController: UIViewController {
             print("Test is done!")
         }
     }
-    
+
     private func showResults() {
         hideAllViews()
         animateMoveLeft(viewController: resultsViewController, startViewOffRight: true, isHiddenOnCompletion: false)
-        
+
         //resultsViewController.view.isHidden = false
     }
-    
+
     private func animateMoveLeft(viewController: UIViewController, startViewOffRight: Bool, isHiddenOnCompletion: Bool) {
         if startViewOffRight {
             self.startViewOffRight(view: viewController.view)
         }
-        
+
         UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
             self.moveLeft(view: viewController.view)
         }, completion: { _ in
             viewController.view.isHidden = isHiddenOnCompletion
         })
     }
-    
+
     private func moveLeft(view: UIView) {
         view.center.x -= view.bounds.width
     }
-    
+
     private func startViewOffRight(view: UIView) {
         view.center.x += view.bounds.width
     }
-    
+
     private func hideAllViews() {
         //twoAnswerViewController.view.isHidden = true
         //rorschachTestViewController.view.isHidden = true
         //responseViewController.view.isHidden = true
-        
+
         switch (previousView) {
         case QuestionType.TwoAnswer:
             if previousView != currentView {
@@ -117,18 +117,18 @@ class QuestionViewController: UIViewController {
         default:
             animateMoveLeft(viewController: responseViewController, startViewOffRight: false, isHiddenOnCompletion: true)
         }
-        
+
     }
-    
+
     private func updateView() {
         hideAllViews()
-        
+
         switch (currentView) {
         case QuestionType.TwoAnswer:
             if previousView != currentView {
+                self.twoAnswerViewController.changeGradientBackground()
                 animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: true, isHiddenOnCompletion: false)
             } else {
-                //self.twoAnswerViewController.changeGradientBackground()
                 self.twoAnswerViewController.view.slideFromRight()
             }
         case QuestionType.RorschachTest:
@@ -139,7 +139,7 @@ class QuestionViewController: UIViewController {
             break
         }
     }
-    
+
     private func updateTwoAnswer(questionText: String, buttonNames: [String]) {
         updateView()
         if currentView == QuestionType.TwoAnswer {
@@ -147,21 +147,21 @@ class QuestionViewController: UIViewController {
             twoAnswerViewController.changeButtonText(buttonTexts: buttonNames)
         }
     }
-    
+
     private func updateResponse(reponseName: String) {
         currentView = QuestionType.Response
         responseViewController.changeLabel(message: reponseName)
         updateView()
     }
-    
+
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
         addChild(childViewController)
-        
+
         view.addSubview(childViewController.view)
-        
+
         childViewController.view.frame = view.bounds
         childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+
         childViewController.didMove(toParent: self)
     }
 
@@ -181,11 +181,11 @@ extension QuestionViewController: QuestionViewControllerDelegate {
     func changeTwoAnswerQuestionToShowResponse(responseName: String) {
         updateResponse(reponseName: responseName)
     }
-    
+
     func changeTwoAnswerQuestionToShowQuestion(questionText: String, buttonNames: [String]) {
         updateTwoAnswer(questionText: questionText, buttonNames: buttonNames)
     }
-    
+
     func twoAnswerQuestionIsFinished() {
         startNextQuestion()
     }

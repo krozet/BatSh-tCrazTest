@@ -20,13 +20,10 @@ class TwoAnswerViewController: UIViewController {
         changeGradientBackground()
         // Do any additional setup after loading the view.
     }
-    
+
     func changeGradientBackground() {
-        setGradientBackground(gradientBackgroungColors: Utility.GB_PURPLE_AQUA, startTopLeft: GlobalVariable.getGradientCorner())
+        setGradientBackground(gradientBackgroungColors: Utility.getGB())
     }
-
-
-
 
     /*
     // MARK: - Navigation

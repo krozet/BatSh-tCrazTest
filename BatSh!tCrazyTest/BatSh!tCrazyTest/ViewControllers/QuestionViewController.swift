@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController {
     var qManager: QuestionManager!
     var currentView = -1
     var previousView = -1
+    var newQuestion = true
 
     lazy var twoAnswerViewController: TwoAnswerViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -58,10 +59,12 @@ class QuestionViewController: UIViewController {
     }
 
     public func startNextPartOfQuestion(lastIdentifier: String) {
+        newQuestion = false
         qManager.continueQuestion(lastIdentifier: lastIdentifier)
     }
 
     public func startNextQuestion() {
+        newQuestion = true
         previousView = currentView
         currentView = qManager.queueNextQuetion()
         if (currentView != -1) {
@@ -129,6 +132,9 @@ class QuestionViewController: UIViewController {
                 self.twoAnswerViewController.changeGradientBackground()
                 animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: true, isHiddenOnCompletion: false)
             } else {
+                if newQuestion {
+                    self.twoAnswerViewController.changeGradientBackground()
+                }
                 self.twoAnswerViewController.view.slideFromRight()
             }
         case QuestionType.RorschachTest:

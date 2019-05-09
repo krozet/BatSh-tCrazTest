@@ -48,7 +48,7 @@ class Utility {
         var secondColor = Int(arc4random_uniform(UInt32(GB_COLORS.count)))
 
         while firstColor == secondColor {
-            secondColor = Int(arc4random_uniform(UInt32(switchValues.count)))
+            secondColor = Int(arc4random_uniform(UInt32(GB_COLORS.count)))
         }
         return [GB_COLORS[firstColor], GB_COLORS[secondColor]]
     }
@@ -56,11 +56,20 @@ class Utility {
 
 extension UIViewController {
     func setGradientBackground(gradientBackgroungColors: [Any]) {
+        if view.layer.sublayers != nil {
+            for layer in view.layer.sublayers! {
+                if layer.name == "MyGradient" {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
+        
         let layer = CAGradientLayer()
         layer.frame = view.bounds
         layer.colors = gradientBackgroungColors
         layer.startPoint = CGPoint(x: 0.5,y: 0)
         layer.endPoint = CGPoint(x: 0.5,y: 1)
+        layer.name = "MyGradient"
 
         view.layer.insertSublayer(layer, at: 0)
     }

@@ -11,12 +11,16 @@ import UIKit
 import ImageIO
 
 struct GlobalVariable {
-  static var gbCurrentTopLeft = false
-
-  mutating func getGradientCorner() -> Bool {
-    gbCurrentTopLeft = !gbCurrentTopLeft
-    return gbCurrentTopLeft
-  }
+    static var gbCurrentTopLeft = false
+  
+   public static func getGradientCorner() -> Bool {
+        adjustValue()
+        return GlobalVariable.gbCurrentTopLeft
+    }
+    
+    public static func adjustValue() {
+        GlobalVariable.gbCurrentTopLeft = !GlobalVariable.gbCurrentTopLeft
+    }
 }
 
 class Utility {
@@ -56,7 +60,6 @@ extension UIViewController {
 }
 
 extension UIView {
-    // Name this function in a way that makes sense to you...
     // slideFromLeft, slideRight, slideLeftToRight, etc. are great alternative names
     func slideFromRight(duration: TimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
         // Create a CATransition animation

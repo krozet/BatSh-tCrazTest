@@ -9,7 +9,7 @@
 import Foundation
 
 class QuestionDatabase {
-    var totalNumberOfTwoAnswerQuestions = 2
+    var totalNumberOfTwoAnswerQuestions = 5
     var twoAnswerQuestions = [TwoAnswerQuestion]()
     let twoAnswerFunctions = [createFlipACointQuestion, createFollowDirectionsQuestion, createRiskTaker, createFollowDirectionsQuestion, createForest, createPirateCaptain, createJar, createCookie, createHideAndSeek, createLateOrEarly, createPlacementOfTrust, createMilkInCereal]
     var rorschachQuestions = [RorschachQuestion]()

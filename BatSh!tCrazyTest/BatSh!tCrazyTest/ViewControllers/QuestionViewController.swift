@@ -128,6 +128,7 @@ class QuestionViewController: UIViewController {
             if previousView != currentView {
                 animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: true, isHiddenOnCompletion: false)
             } else {
+                //self.twoAnswerViewController.changeGradientBackground()
                 self.twoAnswerViewController.view.slideFromRight()
             }
         case QuestionType.RorschachTest:

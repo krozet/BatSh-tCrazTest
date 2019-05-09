@@ -17,8 +17,12 @@ class TwoAnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setGradientBackground(gradientBackgroungColors: GB_PURPLE_AQUA, startTopLeft: GlobalVariable.startTopLeft())
+        changeGradientBackground()
         // Do any additional setup after loading the view.
+    }
+    
+    func changeGradientBackground() {
+        setGradientBackground(gradientBackgroungColors: Utility.GB_PURPLE_AQUA, startTopLeft: GlobalVariable.getGradientCorner())
     }
 
 

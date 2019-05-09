@@ -36,22 +36,6 @@ class QuestionDatabase {
             twoAnswerFunctions[randomNum](self)()
 
             count -= 1
-            /*
-            switch (randomNum) {
-              case 0:
-                createFlipACointQuestion()
-              case 1:
-                createFollowDirectionsQuestion()
-              case 2:
-                createRiskTaker()
-              case 3:
-                createForest()
-              case 4:
-                createPirateCaptain()
-            default:
-                break
-            }
-            */
         }
     }
 

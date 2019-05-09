@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 import ImageIO
 
+struct GlobalVariable {
+  static var gbCurrentTopLeft = false
+
+  mutating func getGradientCorner() -> Bool {
+    gbCurrentTopLeft = !gbCurrentTopLeft
+    return gbCurrentTopLeft
+  }
+}
+
 class Utility {
     public static var MINT = UIColor(rgb: 0x98FF98)
     public static var TURQUOISE = UIColor(rgb: 0x40E0D0)
@@ -17,21 +26,31 @@ class Utility {
     public static var PASTEL_PINK = UIColor(rgb: 0x0F5D0E1)
     public static var CHARCOAL = UIColor(rgb: 0x595B5A)
     public static var LIGHT_GREY = UIColor(rgb: 0x707271)
+    public static var PURPLE = UIColor(rgb: 0xA239FF)
+    public static var AQUA = UIColor(rgb: 0x00F8FF)
 
     public static var GB_MINT_TURQUOISE = [MINT.cgColor, TURQUOISE.cgColor]
     public static var GB_SALMON_MINT = [SALMON.cgColor, MINT.cgColor]
     public static var GB_PASTELPINK_SALMON = [PASTEL_PINK.cgColor, SALMON.cgColor]
     public static var GB_LIGHTGREY_CHARCOAL = [LIGHT_GREY.cgColor, CHARCOAL.cgColor]
     public static var GB_CHARCOAL_LIGHTGREY = [CHARCOAL.cgColor, LIGHT_GREY.cgColor]
+    public static var GB_PURPLE_AQUA = [PURPLE.cgColor, AQUA.cgColor]
+    public static var GB_AQUA_PURPLE = [AQUA.cgColor, PURPLE.cgColor]
 }
 
 extension UIViewController {
-    func setGradientBackground(gradientBackgroungColors: [Any]) {
+    func setGradientBackground(gradientBackgroungColors: [Any], startTopLeft: Bool = true) {
         let layer = CAGradientLayer()
         layer.frame = view.bounds
         layer.colors = gradientBackgroungColors
-        layer.startPoint = CGPoint(x: 0,y: 0)
-        layer.endPoint = CGPoint(x: 1,y: 1)
+        if startTopLeft {
+          layer.startPoint = CGPoint(x: 0,y: 0)
+          layer.endPoint = CGPoint(x: 1,y: 1)
+        } else {
+          layer.startPoint = CGPoint(x: 1,y: 0)
+          layer.endPoint = CGPoint(x: 0,y: 1)
+        }
+
         view.layer.insertSublayer(layer, at: 0)
     }
 }
@@ -42,19 +61,19 @@ extension UIView {
     func slideFromRight(duration: TimeInterval = 0.5, completionDelegate: AnyObject? = nil) {
         // Create a CATransition animation
         let slideFromRightTransition = CATransition()
-        
+
         // Set its callback delegate to the completionDelegate that was provided (if any)
         if let delegate: AnyObject = completionDelegate {
             slideFromRightTransition.delegate = delegate as? CAAnimationDelegate
         }
-        
+
         // Customize the animation's properties
         slideFromRightTransition.type = CATransitionType.push
         slideFromRightTransition.subtype = CATransitionSubtype.fromRight
         slideFromRightTransition.duration = duration
         slideFromRightTransition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         slideFromRightTransition.fillMode = CAMediaTimingFillMode.removed
-        
+
         // Add the animation to the View's layer
         self.layer.add(slideFromRightTransition, forKey: "slideInFromRightTransition")
     }

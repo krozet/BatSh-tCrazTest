@@ -13,16 +13,16 @@ class TwoAnswerViewController: UIViewController {
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setGradientBackground(gradientBackgroungColors: Utility.GB_PASTELPINK_SALMON)
+
+        setGradientBackground(gradientBackgroungColors: GB_PURPLE_AQUA, startTopLeft: GlobalVariable.startTopLeft())
         // Do any additional setup after loading the view.
     }
-    
 
-    
+
+
 
     /*
     // MARK: - Navigation
@@ -33,26 +33,26 @@ class TwoAnswerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     func changeQuestionText(questionText: String) {
         self.questionText.text = questionText
     }
-    
+
     @IBAction func rightButtonClicked(_ sender: Any) {
         let viewController = parent as! QuestionViewController
         viewController.startNextPartOfQuestion(lastIdentifier: rightButton.currentTitle ?? "")
-        
+
     }
     @IBAction func leftButtonClicked(_ sender: Any) {
         let viewController = parent as! QuestionViewController
         viewController.startNextPartOfQuestion(lastIdentifier: leftButton.currentTitle ?? "")
     }
-    
+
     func changeButtonText(buttonTexts: [String]) {
         leftButton.setTitle(buttonTexts[0], for: .normal)
         rightButton.setTitle(buttonTexts[1], for: .normal)
     }
-    
+
     @IBAction func ShowResponse(_ sender: UIButton) {
         let viewController = parent as! QuestionViewController
         viewController.startNextPartOfQuestion(lastIdentifier: "From Two Answer")

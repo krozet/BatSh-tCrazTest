@@ -27,12 +27,18 @@
                                     <segue destination="K9z-UW-BD6" kind="show" id="MF2-0w-SXn"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="B9c-zY-vXP">
+                                <rect key="frame" x="75" y="33" width="264" height="77"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qO2-pd-FW0" secondAttribute="bottom" constant="16" id="V2M-Vv-RM0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B9c-zY-vXP" secondAttribute="trailing" constant="75" id="cgf-oy-TSC"/>
+                            <constraint firstItem="B9c-zY-vXP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="eHp-et-OsG"/>
                             <constraint firstItem="qO2-pd-FW0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="rdd-fq-fJG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qO2-pd-FW0" secondAttribute="trailing" constant="75" id="ueq-zm-yCH"/>
+                            <constraint firstItem="B9c-zY-vXP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="uxM-aF-dA5"/>
                             <constraint firstItem="qO2-pd-FW0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="752" id="xX6-tv-FuH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -43,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="140"/>
+            <point key="canvasLocation" x="750.72463768115949" y="139.95535714285714"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="mgP-bL-Foa">
@@ -341,6 +347,9 @@
             <point key="canvasLocation" x="2330" y="806"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="450" height="77"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MF2-0w-SXn"/>
     </inferredMetricsTieBreakers>

@@ -22,6 +22,9 @@ class ResponseViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.gestureRecognizer))
         tapGesture.delegate = self as? UIGestureRecognizerDelegate
         window.addGestureRecognizer(tapGesture)
+        
+        setGradientBackground(gradientBackgroungColors: Utility.GB_CHARCOAL_LIGHTGREY)
+        messageLabel.textColor = Utility.AQUA
     }
 
     /*

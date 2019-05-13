@@ -9,7 +9,7 @@
 import Foundation
 
 class QuestionDatabase {
-    var totalNumberOfTwoAnswerQuestions = 5
+    var totalNumberOfTwoAnswerQuestions = 6
     var twoAnswerQuestions = [TwoAnswerQuestion]()
     let twoAnswerFunctions = [createFlipACointQuestion, createFollowDirectionsQuestion, createRiskTaker, createFollowDirectionsQuestion, createForest, createPirateCaptain, createJar, createCookie, createHideAndSeek, createLateOrEarly, createPlacementOfTrust, createMilkInCereal]
     var rorschachQuestions = [RorschachQuestion]()
@@ -28,7 +28,7 @@ class QuestionDatabase {
     public func generateRandomTwoAnswerQuestions() {
         var switchValues = [Int](0...twoAnswerFunctions.count-1)
         var count = totalNumberOfTwoAnswerQuestions
-
+        
         while count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(switchValues.count)))
             let randomNum = switchValues[arrayKey]

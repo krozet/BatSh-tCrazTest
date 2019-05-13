@@ -120,7 +120,7 @@ class QuestionManager {
         return questionStack.isEmpty()
     }
     
-    public func continueQuestion(lastIdentifier: String) {
+    public func continueQuestion(lastIdentifier: String){
         switch (getCurrentQuestionType()) {
         case QuestionType.TwoAnswer:
             if (currentQuestion?.isShowingResponse())! {

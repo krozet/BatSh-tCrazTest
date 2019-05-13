@@ -53,6 +53,10 @@ class QuestionViewController: UIViewController {
         layer.endPoint = CGPoint(x: 1,y: 1)
         view.layer.addSublayer(layer)
         // Do any additional setup after loading the view.
+        twoAnswerViewController.view.isHidden = true
+        responseViewController.view.isHidden = true
+        rorschachTestViewController.view.isHidden = true
+        resultsViewController.view.isHidden = true
         qManager = QuestionManager(questionViewController: self)
         currentView = qManager.queueNextQuetion()
         qManager.startNextQuestion()
@@ -60,13 +64,21 @@ class QuestionViewController: UIViewController {
 
     public func startNextPartOfQuestion(lastIdentifier: String) {
         newQuestion = false
+        previousView = currentView
         qManager.continueQuestion(lastIdentifier: lastIdentifier)
     }
 
     public func startNextQuestion() {
         newQuestion = true
+        //("startNextQuestion Before: previous = \(previousView), current = \(currentView)")
         previousView = currentView
         currentView = qManager.queueNextQuetion()
+        //print("twoAnswerisfinished1: previous = \(previousView), current = \(currentView)")
+        //previousView = QuestionType.Response
+        //currentView = QuestionType.TwoAnswer
+        //print("twoAnswerisfinished2: previous = \(previousView), current = \(currentView)")
+        //updateView()
+        
         if (currentView != -1) {
             qManager.startNextQuestion()
         } else {
@@ -74,6 +86,7 @@ class QuestionViewController: UIViewController {
             showResults()
             print("Test is done!")
         }
+ 
     }
 
     private func showResults() {
@@ -84,6 +97,10 @@ class QuestionViewController: UIViewController {
     }
 
     private func animateMoveLeft(viewController: UIViewController, startViewOffRight: Bool, isHiddenOnCompletion: Bool) {
+        
+        viewController.view.isHidden = false
+        centerView(view: viewController.view)
+        
         if startViewOffRight {
             self.startViewOffRight(view: viewController.view)
         }
@@ -102,62 +119,86 @@ class QuestionViewController: UIViewController {
     private func startViewOffRight(view: UIView) {
         view.center.x += view.bounds.width
     }
+    
+    private func centerView(view: UIView) {
+        view.center.x = view.center.x
+    }
 
     private func hideAllViews() {
         //twoAnswerViewController.view.isHidden = true
-        //rorschachTestViewController.view.isHidden = true
+        rorschachTestViewController.view.isHidden = true
+        resultsViewController.view.isHidden = true
         //responseViewController.view.isHidden = true
-
+        
+        
         switch (previousView) {
         case QuestionType.TwoAnswer:
             if previousView != currentView {
-                animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: false, isHiddenOnCompletion: true)
+                //animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: false, isHiddenOnCompletion: true)
+                twoAnswerViewController.view.isHidden = true
             }
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = true
         case QuestionType.Response:
-            animateMoveLeft(viewController: responseViewController, startViewOffRight: false, isHiddenOnCompletion: true)
+            //previousView = currentView
+            print("hiding response")
+            //animateMoveLeft(viewController: responseViewController, startViewOffRight: false, isHiddenOnCompletion: true)
+            responseViewController.view.isHidden = true
         default:
-            animateMoveLeft(viewController: responseViewController, startViewOffRight: false, isHiddenOnCompletion: true)
+            break
         }
-
+ 
     }
 
     private func updateView() {
         hideAllViews()
-
+        
         switch (currentView) {
         case QuestionType.TwoAnswer:
             if previousView != currentView {
+                //self.twoAnswerViewController.view.isHidden = false
                 self.twoAnswerViewController.changeGradientBackground()
-                animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: true, isHiddenOnCompletion: false)
+                //self.centerView(view: twoAnswerViewController.view)
+                //animateMoveLeft(viewController: twoAnswerViewController, startViewOffRight: true, isHiddenOnCompletion: false)
+                twoAnswerViewController.view.isHidden = false
+                
+                //self.twoAnswerViewController.view.slideFromRight()
             } else {
                 if newQuestion {
                     self.twoAnswerViewController.changeGradientBackground()
                 }
-                self.twoAnswerViewController.view.slideFromRight()
+                    self.twoAnswerViewController.view.slideFromRight()
             }
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
         case QuestionType.Response:
-            animateMoveLeft(viewController: responseViewController, startViewOffRight: true, isHiddenOnCompletion: false)
+            //animateMoveLeft(viewController: responseViewController, startViewOffRight: true, isHiddenOnCompletion: false)
+            responseViewController.view.isHidden = false
         default:
             break
         }
     }
 
     private func updateTwoAnswer(questionText: String, buttonNames: [String]) {
+        //previousView = currentView
+        //currentView = QuestionType.TwoAnswer
         updateView()
-        if currentView == QuestionType.TwoAnswer {
-            twoAnswerViewController.changeQuestionText(questionText: questionText)
-            twoAnswerViewController.changeButtonText(buttonTexts: buttonNames)
-        }
+        twoAnswerViewController.changeQuestionText(questionText: questionText)
+        twoAnswerViewController.changeButtonText(buttonTexts: buttonNames)
+        
     }
 
     private func updateResponse(reponseName: String) {
+        print("updateResponse called")
+        previousView = currentView
         currentView = QuestionType.Response
+        //responseViewController.view.isHidden = false
         responseViewController.changeLabel(message: reponseName)
+        //twoAnswerViewController.view.isHidden = true
+        
         updateView()
+        //hideAllViews()
+        //animateMoveLeft(viewController: responseViewController, startViewOffRight: true, isHiddenOnCompletion: false)
     }
 
     private func addViewControllerAsChildViewController(childViewController: UIViewController) {
@@ -193,6 +234,12 @@ extension QuestionViewController: QuestionViewControllerDelegate {
     }
 
     func twoAnswerQuestionIsFinished() {
+        //previousView = QuestionType.Response
+        //currentView = QuestionType.TwoAnswer
+        //print("twoAnswerisfinished2: previous = \(previousView), current = \(currentView)")
+        //updateView()
+        //responseViewController.view.isHidden = true
+        //twoAnswerViewController.view.isHidden = false
         startNextQuestion()
     }
 }

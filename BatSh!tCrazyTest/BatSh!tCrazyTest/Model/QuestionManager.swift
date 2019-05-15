@@ -15,7 +15,7 @@ protocol QuestionViewControllerDelegate {
 }
 
 class QuestionManager {
-    let numberOfTestQuestions = 10
+    static let numberOfTestQuestions = 10
     
     struct Stack {
         private var questions: [Question] = []

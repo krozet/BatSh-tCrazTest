@@ -25,6 +25,9 @@ class Utility {
     public static var PASTEL_PINK = UIColor(rgb: 0x0F5D0E1)
     public static var CHARCOAL = UIColor(rgb: 0x595B5A)
     public static var LIGHT_GREY = UIColor(rgb: 0x707271)
+    public static var DARK_GREY = UIColor(rgb: 0x131517)
+    public static var LIGHT_ORANGE = UIColor(rgb: 0xFFDF9E)
+    public static var DARK_ORANGE = UIColor(rgb: 0xFF971A)
 
     public static var PURPLE = UIColor(rgb: 0xA239FF)
     public static var AQUA = UIColor(rgb: 0x00F8FF)
@@ -40,6 +43,7 @@ class Utility {
     public static var GB_PASTELPINK_SALMON = [PASTEL_PINK.cgColor, SALMON.cgColor]
     public static var GB_LIGHTGREY_CHARCOAL = [LIGHT_GREY.cgColor, CHARCOAL.cgColor]
     public static var GB_CHARCOAL_LIGHTGREY = [CHARCOAL.cgColor, LIGHT_GREY.cgColor]
+    public static var GB_LIGHTORANGE_DARKORANGE = [LIGHT_ORANGE.cgColor, DARK_ORANGE.cgColor]
 
     public static var GB_COLORS = [PURPLE.cgColor, AQUA.cgColor, PALE_PURPLE.cgColor, PALE_AQUA.cgColor, PALE_AQUAMARINE.cgColor, DARK_AQUA.cgColor, DARK_TURQUOISE.cgColor, LIGHT_PALE_PURPLE.cgColor]
 

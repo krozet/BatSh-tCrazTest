@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController {
     var qManager: QuestionManager!
     var currentView = -1
     var previousView = -1
+    var currentQuestionNumber = 0
     var newQuestion = true
 
     lazy var twoAnswerViewController: TwoAnswerViewController = {
@@ -58,8 +59,8 @@ class QuestionViewController: UIViewController {
         rorschachTestViewController.view.isHidden = true
         resultsViewController.view.isHidden = true
         qManager = QuestionManager(questionViewController: self)
-        currentView = qManager.queueNextQuetion()
-        qManager.startNextQuestion()
+        
+        startNextQuestion()
     }
 
     public func startNextPartOfQuestion(lastIdentifier: String) {
@@ -70,14 +71,9 @@ class QuestionViewController: UIViewController {
 
     public func startNextQuestion() {
         newQuestion = true
-        //("startNextQuestion Before: previous = \(previousView), current = \(currentView)")
         previousView = currentView
         currentView = qManager.queueNextQuetion()
-        //print("twoAnswerisfinished1: previous = \(previousView), current = \(currentView)")
-        //previousView = QuestionType.Response
-        //currentView = QuestionType.TwoAnswer
-        //print("twoAnswerisfinished2: previous = \(previousView), current = \(currentView)")
-        //updateView()
+        currentQuestionNumber += 1
         
         if (currentView != -1) {
             qManager.startNextQuestion()
@@ -162,7 +158,6 @@ class QuestionViewController: UIViewController {
 
     private func updateView() {
         
-        
         switch (currentView) {
         case QuestionType.TwoAnswer:
             if previousView != currentView {
@@ -174,10 +169,12 @@ class QuestionViewController: UIViewController {
                 }
                     self.twoAnswerViewController.view.slideFromRight()
             }
+            twoAnswerViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: QuestionManager.numberOfTestQuestions)
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
         case QuestionType.Response:
             responseViewController.view.isHidden = false
+            responseViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: QuestionManager.numberOfTestQuestions)
         default:
             break
         }

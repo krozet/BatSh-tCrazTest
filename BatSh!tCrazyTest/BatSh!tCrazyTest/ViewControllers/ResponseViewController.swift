@@ -14,6 +14,7 @@ class ResponseViewController: UIViewController {
     @IBOutlet var twoAnswersButton: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet var window: UIView!
+    @IBOutlet weak var questionCountText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,9 @@ class ResponseViewController: UIViewController {
         tapGesture.delegate = self as? UIGestureRecognizerDelegate
         window.addGestureRecognizer(tapGesture)
         
-        setGradientBackground(gradientBackgroungColors: Utility.GB_CHARCOAL_LIGHTGREY)
-        messageLabel.textColor = Utility.AQUA
+        setGradientBackground(gradientBackgroungColors: Utility.GB_LIGHTORANGE_DARKORANGE)
+        messageLabel.textColor = Utility.DARK_GREY
+        questionCountText.textColor = Utility.DARK_GREY
     }
 
     /*
@@ -43,6 +45,11 @@ class ResponseViewController: UIViewController {
     
     func changeLabel(message: String) {
         messageLabel.text = message
+    }
+    
+    func changeQuestionCountText(currentQuestionNumber: Int, totalQuestions: Int) {
+        let text = "\(currentQuestionNumber) of \(totalQuestions)"
+        self.questionCountText.text = text
     }
     
     @IBAction func ShowRorschachTest(_ sender: Any) {

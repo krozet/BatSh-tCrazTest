@@ -13,12 +13,20 @@ class TwoAnswerViewController: UIViewController {
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
-
+    @IBOutlet weak var questionCountText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         changeGradientBackground()
+        questionText.textColor = Utility.DARK_GREY
+        questionCountText.textColor = Utility.DARK_GREY
         // Do any additional setup after loading the view.
+    }
+    
+    func changeQuestionCountText(currentQuestionNumber: Int, totalQuestions: Int) {
+        let text = "\(currentQuestionNumber) of \(totalQuestions)"
+        self.questionCountText.text = text
     }
 
     func changeGradientBackground() {

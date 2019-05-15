@@ -22,10 +22,7 @@ class IntroductionViewController: UIViewController {
         imageView.frame = CGRect(x: 0.0, y:0.0, width: view.bounds.width, height: view.bounds.height)
         view.insertSubview(imageView, at: 0)
 
-        //startTestButton.setGradientBackground(colours: Utility.GB_MINT_TURQUOISE)
-        //startTestButton.backgroundColor = .clear
         startTestButton.backgroundColor = UIColor(white: 1, alpha: 0.35)
-        //startTestButton.layer.sublayers?[0].frame = startTestButton.layer.bounds
         startTestButton.setTitleColor(Utility.PURPLE, for: .normal)
         startTestButton.layer.cornerRadius = 25
         startTestButton.layer.borderWidth = 2

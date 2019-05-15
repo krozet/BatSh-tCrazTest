@@ -199,6 +199,11 @@
                     <navigationItem key="navigationItem" title="Results" id="e5K-4q-W8a">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zYJ-7M-ef3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="rechekSanityButton" destination="oJh-cv-sNB" id="adP-Bw-E8D"/>
+                        <outlet property="resultText" destination="Pkn-y8-JtB" id="5cs-4Q-dl6"/>
+                        <outlet property="resultTextDescription" destination="w66-zd-iMa" id="sob-Lg-ADh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCa-EU-AhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

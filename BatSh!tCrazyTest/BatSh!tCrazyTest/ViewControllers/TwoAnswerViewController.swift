@@ -22,6 +22,16 @@ class TwoAnswerViewController: UIViewController {
         questionText.textColor = Utility.DARK_GREY
         questionCountText.textColor = Utility.DARK_GREY
         // Do any additional setup after loading the view.
+        setupButton(button: rightButton)
+        setupButton(button: leftButton)
+    }
+    
+    private func setupButton(button: UIButton) {
+        button.backgroundColor = UIColor(white: 1, alpha: 0.20)
+        button.setTitleColor(Utility.PURPLE, for: .normal)
+        //button.layer.cornerRadius = 25
+        button.layer.borderWidth = 2
+        button.layer.borderColor = Utility.PURPLE.cgColor
     }
     
     func changeQuestionCountText(currentQuestionNumber: Int, totalQuestions: Int) {

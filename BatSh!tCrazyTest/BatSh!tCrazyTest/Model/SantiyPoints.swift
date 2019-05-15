@@ -17,6 +17,7 @@ class SanityPointValue {
     public static var Feeling = 5
     public static var Judging = 6
     public static var Perceiving = 7
+    public static var NULL = 8
 }
 
 class SanityPoints {
@@ -24,10 +25,10 @@ class SanityPoints {
     public var NorS = 0
     public var TorF = 0
     public var PorJ = 0
-    
+
     init() {
     }
-    
+
     public func increaseSanityPoint(sanityPoint: Int) {
         switch sanityPoint {
         case SanityPointValue.Introvert:
@@ -50,69 +51,60 @@ class SanityPoints {
             break
         }
     }
-    
+
     public func addSanityPoints(questionSanityPointValue: SanityPoints) {
         IorE += questionSanityPointValue.IorE
         NorS += questionSanityPointValue.NorS
         TorF += questionSanityPointValue.TorF
         PorJ += questionSanityPointValue.PorJ
     }
-    
+
     public func getSanityValues() -> [Int] {
         var sanityValues = [Int]()
-        
+
         // Introvert or Extrovert
         if (IorE > 0) {
             sanityValues.append(SanityPointValue.Introvert)
         } else if (IorE < 0) {
             sanityValues.append(SanityPointValue.Extrovert)
         } else {
+            sanityValues.append(SanityPointValue.NULL)
+            /*
             if Int.random(in: 0...1) == 0 {
                 sanityValues.append(SanityPointValue.Introvert)
             } else {
                 sanityValues.append(SanityPointValue.Extrovert)
             }
+            */
         }
-        
+
         // Intuition or Sensing
         if (NorS > 0) {
             sanityValues.append(SanityPointValue.Intuition)
         } else if (NorS < 0) {
             sanityValues.append(SanityPointValue.Sensing)
         } else {
-            if Int.random(in: 0...1) == 0 {
-                sanityValues.append(SanityPointValue.Intuition)
-            } else {
-                sanityValues.append(SanityPointValue.Sensing)
-            }
+            sanityValues.append(SanityPointValue.NULL)
         }
-        
+
         // Thinking or Feeling
         if (TorF > 0) {
             sanityValues.append(SanityPointValue.Thinking)
         } else if (TorF < 0) {
             sanityValues.append(SanityPointValue.Feeling)
         } else {
-            if Int.random(in: 0...1) == 0 {
-                sanityValues.append(SanityPointValue.Thinking)
-            } else {
-                sanityValues.append(SanityPointValue.Feeling)
-            }
+            sanityValues.append(SanityPointValue.NULL)
         }
-        
+
         // Perceiving or Judging
         if (PorJ > 0) {
             sanityValues.append(SanityPointValue.Perceiving)
         } else if (PorJ < 0) {
             sanityValues.append(SanityPointValue.Judging)
         } else {
-            if Int.random(in: 0...1) == 0 {
-                sanityValues.append(SanityPointValue.Perceiving)
-            } else {
-                sanityValues.append(SanityPointValue.Judging)
-            }
+            sanityValues.append(SanityPointValue.NULL)
         }
-        
+
         return sanityValues
     }
 }

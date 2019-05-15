@@ -88,6 +88,7 @@ class QuestionViewController: UIViewController {
     private func showResults() {
         hideAllViews()
         resultsViewController.view.isHidden = false
+        resultsViewController.calculateResults(spm: qManager.getSanityPointManager())
     }
     
     private func animateTwoAnswerMoveLeft(startViewOffRight: Bool, isHiddenOnCompletion: Bool) {

@@ -169,23 +169,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-y8-JtB">
-                                <rect key="frame" x="186" y="282" width="43" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-y8-JtB">
+                                <rect key="frame" x="16" y="282" width="382" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w66-zd-iMa">
-                                <rect key="frame" x="186" y="350" width="43" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w66-zd-iMa">
+                                <rect key="frame" x="16" y="370" width="382" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJh-cv-sNB">
-                                <rect key="frame" x="183" y="626" width="53" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJh-cv-sNB">
+                                <rect key="frame" x="75" y="640.5" width="264" height="36.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -194,6 +191,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qPJ-SN-tg1" firstAttribute="trailing" secondItem="Pkn-y8-JtB" secondAttribute="trailing" constant="16" id="27y-Mw-ONu"/>
+                            <constraint firstItem="oJh-cv-sNB" firstAttribute="top" secondItem="w66-zd-iMa" secondAttribute="bottom" constant="247" id="5D1-8E-ePM"/>
+                            <constraint firstItem="oJh-cv-sNB" firstAttribute="top" secondItem="w66-zd-iMa" secondAttribute="bottom" constant="247" id="6rj-1X-K1v"/>
+                            <constraint firstItem="oJh-cv-sNB" firstAttribute="leading" secondItem="qPJ-SN-tg1" secondAttribute="leading" constant="75" id="8zx-uI-69O"/>
+                            <constraint firstItem="w66-zd-iMa" firstAttribute="top" secondItem="Pkn-y8-JtB" secondAttribute="bottom" constant="64.5" id="C8C-GI-Rtg"/>
+                            <constraint firstItem="qPJ-SN-tg1" firstAttribute="bottom" secondItem="oJh-cv-sNB" secondAttribute="bottom" constant="185" id="HMi-qh-XuZ"/>
+                            <constraint firstItem="Pkn-y8-JtB" firstAttribute="top" secondItem="qPJ-SN-tg1" secondAttribute="top" constant="238" id="Nmu-S2-OO9"/>
+                            <constraint firstItem="w66-zd-iMa" firstAttribute="top" secondItem="Pkn-y8-JtB" secondAttribute="bottom" constant="64.5" id="bNf-CJ-qlb"/>
+                            <constraint firstItem="Pkn-y8-JtB" firstAttribute="leading" secondItem="qPJ-SN-tg1" secondAttribute="leading" constant="16" id="joA-sn-8hi"/>
+                            <constraint firstItem="qPJ-SN-tg1" firstAttribute="trailing" secondItem="w66-zd-iMa" secondAttribute="trailing" constant="16" id="nSW-Vh-z4z"/>
+                            <constraint firstItem="qPJ-SN-tg1" firstAttribute="trailing" secondItem="oJh-cv-sNB" secondAttribute="trailing" constant="75" id="p9K-I2-T1w"/>
+                            <constraint firstItem="w66-zd-iMa" firstAttribute="leading" secondItem="qPJ-SN-tg1" secondAttribute="leading" constant="16" id="z2Q-0L-bJW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qPJ-SN-tg1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="e5K-4q-W8a">
@@ -207,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCa-EU-AhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2436" y="140"/>
+            <point key="canvasLocation" x="2434.7826086956525" y="139.95535714285714"/>
         </scene>
         <!--Two Answer View Controller-->
         <scene sceneID="sY4-iB-8ZS">

@@ -29,8 +29,12 @@ class ResultsViewController: UIViewController {
         button.layer.borderColor = Utility.PURPLE.cgColor
     }
     
-    func calculateResults() {
-        
+    func calculateResults(spm: SanityPointsManager) {
+        let svString = spm.getSanityValuesAsStrings()
+        if svString.count > 0 {
+            changeResponseText(text: svString[0])
+            changeResponseTextDescription(text: svString[0])
+        }
     }
     
     func changeResponseText(text: String) {

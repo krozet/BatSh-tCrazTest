@@ -90,6 +90,10 @@ class QuestionManager {
         }
     }
     
+    public func getSanityPointManager() -> SanityPointsManager {
+        return sanityPointsManager
+    }
+    
     // begin the next question in the stack and signal the type
     public func queueNextQuetion() -> Int {
         if !isQuestionStackEmpty() {

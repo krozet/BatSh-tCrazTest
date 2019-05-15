@@ -91,6 +91,7 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q8: Risk Taker", questionText: "Do you consider yourself a risk taker?", buttonNames: ["Q8.Ch1-1(Yes)", "Q8.Ch1-2(No)"])
       taQuestion.insertButton(buttonName: "Q8.Ch1-1(Yes)", buttonText: "Yes", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+        
       taQuestion.insertButton(buttonName: "Q8.Ch1-2(No)", buttonText: "No", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
 
       twoAnswerQuestions.append(taQuestion)
@@ -157,8 +158,10 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q9: Hide and Seek", questionText: "When playing Hide-and-Seek are you better at hiding or seeking?", buttonNames: ["Q9.Ch1-1(Hiding)", "Q9.Ch1-2(Seeking)"])
       taQuestion.insertButton(buttonName: "Q9.Ch1-1(Hiding)", buttonText: "Hiding", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-1(Hiding)", sanityPoint: SanityPointValue.Introvert)
       taQuestion.insertButton(buttonName: "Q9.Ch1-2(Seeking)", buttonText: "Seeking", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
-
+      taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-2(Seeking)", sanityPoint: SanityPointValue.Extrovert)
+        
       twoAnswerQuestions.append(taQuestion)
     }
 

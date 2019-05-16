@@ -15,7 +15,7 @@ protocol QuestionViewControllerDelegate {
 }
 
 class QuestionManager {
-    static let numberOfTestQuestions = 10
+    var numberOfTestQuestions = 0
     
     struct Stack {
         private var questions: [Question] = []
@@ -62,6 +62,7 @@ class QuestionManager {
         var (numOfQuestions, twoAnswerQuestions, rorschachQuestions) =
             qDatabase!.getTestQuestions()
         var question: Question
+        numberOfTestQuestions = numOfQuestions
 
         while numOfQuestions > 0 {
             var pushedQuestion = false

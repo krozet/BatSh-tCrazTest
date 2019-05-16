@@ -170,12 +170,12 @@ class QuestionViewController: UIViewController {
                 }
                     self.twoAnswerViewController.view.slideFromRight()
             }
-            twoAnswerViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: QuestionManager.numberOfTestQuestions)
+            twoAnswerViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: qManager.numberOfTestQuestions)
         case QuestionType.RorschachTest:
             rorschachTestViewController.view.isHidden = false
         case QuestionType.Response:
             responseViewController.view.isHidden = false
-            responseViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: QuestionManager.numberOfTestQuestions)
+            responseViewController.changeQuestionCountText(currentQuestionNumber: currentQuestionNumber, totalQuestions: qManager.numberOfTestQuestions)
         default:
             break
         }

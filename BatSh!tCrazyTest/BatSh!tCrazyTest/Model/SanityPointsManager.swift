@@ -37,7 +37,7 @@ class SanityPointsManager {
     func getSanityResults() -> [String] {
         let randomIndexes = [Int](0...saneResponses.count-1)
         let ri = Int(arc4random_uniform(UInt32(randomIndexes.count)))
-        return [results[0], saneResponses[ri]]
+        return [results[1], saneResponses[ri]]
     }
     
     func getCrazyResults() -> [String] {

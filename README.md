@@ -8,9 +8,9 @@ Bat Sh!t Crazy Test is an app that allows you to determine if you have completel
 App creator: Keawa Rozet  
 Code reviewer: 
 # How it works
-  The app will randomly select 10-15 questions from its database to ask the user. A single question might contain multiple questions attached to it, or multiple random responses to the user's answer. Each answer to every question will have one or more personality tags associated to it. At the end depending on the the user's combination of their highest and lowest personality tag occurances, they will be considered Bat Sh!t Crazy or perfectly (and boringly) sane.  
+  The app will randomly select 10 questions from its database to ask the user. A single question might contain multiple questions attached to it, or responses to the user's answer. Each answer to every question will have one or more personality tags associated to it. At the end depending on the the user's combination of their highest and lowest personality tag occurances, they will be considered Bat Sh!t Crazy or perfectly (and boringly) sane.  
     
-  The questions will vary from simple questions, to serious question about life & philosophy. The user might be asked to respond to a Rorschach test, or even a lightning round of questions that are timed. There will be many trick questions as well and responses to user's answers that will give them another chance to reconsider their choice. The questions are meant to be humorous and witty, causing the user to lightly exhale in amusement at some questions and take a second to consider others.
+  The questions will vary from simple questions, to serious question about life & philosophy. There will be many trick questions as well and responses to user's answers that will give them another chance to reconsider their choice. The questions are meant to be humorous and witty, causing the user to lightly exhale in amusement at some questions and take a second to consider others.
   
   Here's an example question with choices, follow up questions, and responses to the user. Responses are typically rhetorical questions to make the user feel uneasy about their decisions. This uneasy feeling that they could have possibly chosen a better answer will likely lead them to attempt the test again choosing a different answer next time (if they happen to get the question again).
   
@@ -35,7 +35,7 @@ Code reviewer:
   
     
 # Must-have Features  
-  - Database of over 200 questions and responses
+  - Database of over 20 questions and responses
   - System for selecting a random question
   - System for determining point value worth for each user answer
   - Algorithm for determing if the user's answers deem them bat sh!t crazy or not
@@ -52,7 +52,7 @@ Code reviewer:
 ![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/bsc%20mockup.jpg?raw=true)  
 
 # Work load
-- Database of over 200 questions and responses (16hrs)
+- Database of over 20 questions and responses (12hrs)
 - System for selecting a random question (4hrs)
 - System for determining point value worth for each user answer (4hrs)
 - Algorithm for determing if the user's answers deem them bat sh!t crazy or not (1hr)

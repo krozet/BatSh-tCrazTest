@@ -96,7 +96,7 @@ class QuestionDatabase {
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", sanityPoint: SanityPointValue.Judging)
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", sanityPoint: SanityPointValue.Thinking)
 
-        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Impressive. I hardly even know you, but I can tell there's something clearly wrong with you.", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Impressive. I hardly even know you, but I can tell that I'm not the only one out there who finds you annoying.", nextQuestionName: nil, end: true)
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", sanityPoint: SanityPointValue.Perceiving)
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", sanityPoint: SanityPointValue.Thinking)
 

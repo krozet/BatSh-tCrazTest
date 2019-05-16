@@ -50,6 +50,12 @@ Code reviewer:
   - Possible images to go along with text
 # Mock Ups  
 ![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/bsc%20mockup.jpg?raw=true)  
+  
+# Screenshots  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/Screenshots/Introduction%20screen.png?raw=true)  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/Screenshots/flipcoin1.png?raw=true)  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/Screenshots/flipcoin2.png?raw=true)  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/Screenshots/results.png?raw=true)  
 
 # Work load
 - Database of over 20 questions and responses (12hrs)

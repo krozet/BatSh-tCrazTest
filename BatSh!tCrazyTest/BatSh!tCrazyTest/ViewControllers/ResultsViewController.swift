@@ -13,6 +13,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var resultTextDescription: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +32,10 @@ class ResultsViewController: UIViewController {
     }
     
     func calculateResults(spm: SanityPointsManager) {
-        print("Sanity?: \(spm.isSane())")
-        print("Here's the personality type: \(spm.getSanityValuesAsStrings())")
-        //if svString.count > 0 {
-        //    changeResponseText(text: svString[0])
-        //    changeResponseTextDescription(text: svString[0])
-        //}
+        let results = spm.calcuateSanity()
+
+        changeResponseText(text: results[0])
+        changeResponseTextDescription(text: results[1])
     }
     
     func changeResponseText(text: String) {

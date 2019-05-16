@@ -1,5 +1,5 @@
 # Bat Sh!t Crazy Test  
-![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/BSC%20icon.png)  
+![](https://github.com/krozet/BatSh-tCrazTest/blob/master/Assets/icons/iTunesArtwork%402x.png)  
 other possible name: __Sanity Test__
 
 # Description

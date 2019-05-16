@@ -18,6 +18,51 @@ class SanityPointValue {
     public static var Judging = 6
     public static var Perceiving = 7
     public static var NULL = 8
+    
+    public static var INTP = [Introvert, Intuition, Thinking, Perceiving]
+    public static var INTJ = [Introvert, Intuition, Thinking, Judging]
+    public static var ENTJ = [Extrovert, Intuition, Thinking, Judging]
+    public static var ENTP = [Extrovert, Intuition, Thinking, Perceiving]
+    
+    public static var INFJ = [Introvert, Intuition, Feeling, Judging]
+    public static var INFP = [Introvert, Intuition, Feeling, Perceiving]
+    public static var ENFJ = [Extrovert, Intuition, Feeling, Judging]
+    public static var ENFP = [Extrovert, Intuition, Feeling, Perceiving]
+    
+    public static var ISTJ = [Introvert, Sensing, Thinking, Judging]
+    public static var ISFJ = [Introvert, Sensing, Feeling, Judging]
+    public static var ESTJ = [Extrovert, Sensing, Thinking, Judging]
+    public static var ESFJ = [Extrovert, Sensing, Feeling, Judging]
+    
+    public static var ISTP = [Introvert, Sensing, Thinking, Perceiving]
+    public static var ISFP = [Introvert, Sensing, Feeling, Perceiving]
+    public static var ESTP = [Extrovert, Sensing, Thinking, Perceiving]
+    public static var ESFP = [Extrovert, Sensing, Feeling, Perceiving]
+    
+    public static var SANE = [INTP, INTJ, ISTP, ISFP, ENTP, ESTP, ENFP, ENFJ]
+    public static var CRAZY = [INFP, INFJ, ISTJ, ISFJ, ENTJ, ESTJ, ESFJ, ESFP]
+    
+    public static var PERSONALITIES = [INTP, INTJ, ENTJ, ENTP, INFJ, INFP, ENFJ, ENFP, ISTJ, ESFJ, ESTJ, ESFJ, ISTP, ISFP, ESTP, ESFP]
+}
+
+class SanityCalulator {
+    public static func isSane(personality: [Int]) -> Bool {
+        return checkSanity(personalityIndex: getPersonalityIndex(personality: personality))
+    }
+    
+    public static func getPersonalityIndex(personality: [Int]) -> Int {
+        let value = SanityPointValue.PERSONALITIES.firstIndex(of: personality) ?? -1
+        if value == -1 {
+            print("getPersonalityIndex is out of bounds")
+            return 0
+        }
+        
+        return value
+    }
+    
+    public static func checkSanity(personalityIndex: Int) -> Bool {
+        return SanityPointValue.SANE.contains(SanityPointValue.PERSONALITIES[personalityIndex])
+    }
 }
 
 class SanityPoints {
@@ -59,7 +104,7 @@ class SanityPoints {
         PorJ += questionSanityPointValue.PorJ
     }
 
-    public func getSanityValues() -> [Int] {
+    public func getSanityValues(finalCalculation: Bool = false) -> [Int] {
         var sanityValues = [Int]()
 
         // Introvert or Extrovert
@@ -68,14 +113,17 @@ class SanityPoints {
         } else if (IorE < 0) {
             sanityValues.append(SanityPointValue.Extrovert)
         } else {
-            sanityValues.append(SanityPointValue.NULL)
-            /*
-            if Int.random(in: 0...1) == 0 {
-                sanityValues.append(SanityPointValue.Introvert)
+            if finalCalculation {
+                if Int.random(in: 0...1) == 0 {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Introvert)
+                    sanityValues.append(SanityPointValue.Introvert)
+                } else {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Extrovert)
+                    sanityValues.append(SanityPointValue.Extrovert)
+                }
             } else {
-                sanityValues.append(SanityPointValue.Extrovert)
+                sanityValues.append(SanityPointValue.NULL)
             }
-            */
         }
 
         // Intuition or Sensing
@@ -84,7 +132,17 @@ class SanityPoints {
         } else if (NorS < 0) {
             sanityValues.append(SanityPointValue.Sensing)
         } else {
-            sanityValues.append(SanityPointValue.NULL)
+            if finalCalculation {
+                if Int.random(in: 0...1) == 0 {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Intuition)
+                    sanityValues.append(SanityPointValue.Intuition)
+                } else {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Sensing)
+                    sanityValues.append(SanityPointValue.Sensing)
+                }
+            } else {
+                sanityValues.append(SanityPointValue.NULL)
+            }
         }
 
         // Thinking or Feeling
@@ -93,7 +151,17 @@ class SanityPoints {
         } else if (TorF < 0) {
             sanityValues.append(SanityPointValue.Feeling)
         } else {
-            sanityValues.append(SanityPointValue.NULL)
+            if finalCalculation {
+                if Int.random(in: 0...1) == 0 {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Thinking)
+                    sanityValues.append(SanityPointValue.Thinking)
+                } else {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Feeling)
+                    sanityValues.append(SanityPointValue.Feeling)
+                }
+            } else {
+                sanityValues.append(SanityPointValue.NULL)
+            }
         }
 
         // Perceiving or Judging
@@ -102,7 +170,17 @@ class SanityPoints {
         } else if (PorJ < 0) {
             sanityValues.append(SanityPointValue.Judging)
         } else {
-            sanityValues.append(SanityPointValue.NULL)
+            if finalCalculation {
+                if Int.random(in: 0...1) == 0 {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Perceiving)
+                    sanityValues.append(SanityPointValue.Perceiving)
+                } else {
+                    increaseSanityPoint(sanityPoint: SanityPointValue.Judging)
+                    sanityValues.append(SanityPointValue.Judging)
+                }
+            } else {
+                sanityValues.append(SanityPointValue.NULL)
+            }
         }
 
         return sanityValues

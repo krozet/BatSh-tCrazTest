@@ -15,13 +15,19 @@ class SanityPointsManager {
         sanityPointTracker = SanityPoints()
     }
     
+    func isSane() -> Bool {
+        let sv = sanityPointTracker.getSanityValues(finalCalculation: true)
+        return SanityCalulator.isSane(personality: sv)
+    }
+    
     func updateSanityPoints(sanityPoints: SanityPoints) {
         sanityPointTracker.addSanityPoints(questionSanityPointValue: sanityPoints)
     }
     
     func getSanityValuesAsStrings() -> [String] {
-        let sv = sanityPointTracker.getSanityValues()
+        let sv = sanityPointTracker.getSanityValues(finalCalculation: true)
         var values = [String]()
+        
         for sanity in sv {
             switch sanity {
             case SanityPointValue.Extrovert:

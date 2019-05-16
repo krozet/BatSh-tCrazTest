@@ -44,6 +44,7 @@ class Utility {
     public static var GB_LIGHTGREY_CHARCOAL = [LIGHT_GREY.cgColor, CHARCOAL.cgColor]
     public static var GB_CHARCOAL_LIGHTGREY = [CHARCOAL.cgColor, LIGHT_GREY.cgColor]
     public static var GB_LIGHTORANGE_DARKORANGE = [LIGHT_ORANGE.cgColor, DARK_ORANGE.cgColor]
+    public static var GB_PURPLE_AQUA = [PURPLE.cgColor, AQUA.cgColor]
 
     public static var GB_COLORS = [PURPLE.cgColor, AQUA.cgColor, PALE_PURPLE.cgColor, PALE_AQUA.cgColor, PALE_AQUAMARINE.cgColor, DARK_AQUA.cgColor, DARK_TURQUOISE.cgColor, LIGHT_PALE_PURPLE.cgColor]
 

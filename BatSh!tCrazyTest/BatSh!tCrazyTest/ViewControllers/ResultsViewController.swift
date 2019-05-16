@@ -17,7 +17,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setGradientBackground(gradientBackgroungColors: Utility.GB_LIGHTGREY_CHARCOAL)
+        setGradientBackground(gradientBackgroungColors: Utility.GB_PURPLE_AQUA)
         setupButton(button: rechekSanityButton)
     }
     
@@ -30,11 +30,12 @@ class ResultsViewController: UIViewController {
     }
     
     func calculateResults(spm: SanityPointsManager) {
-        let svString = spm.getSanityValuesAsStrings()
-        if svString.count > 0 {
-            changeResponseText(text: svString[0])
-            changeResponseTextDescription(text: svString[0])
-        }
+        print("Sanity?: \(spm.isSane())")
+        print("Here's the personality type: \(spm.getSanityValuesAsStrings())")
+        //if svString.count > 0 {
+        //    changeResponseText(text: svString[0])
+        //    changeResponseTextDescription(text: svString[0])
+        //}
     }
     
     func changeResponseText(text: String) {

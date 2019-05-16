@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10E6690227B41CC009FEF26 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E668F227B41CC009FEF26 /* Question.swift */; };
+		A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */; };
+		A146EA6A2280FC7E00C5065A /* SantiyPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146EA692280FC7E00C5065A /* SantiyPoints.swift */; };
+		A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA3362228218A800A69408 /* SanityPointsManager.swift */; };
+		A1C2B45F22823EBB0070BC4B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C2B45E22823EBB0070BC4B /* Utility.swift */; };
+		A1C4D98E2289E0B300813828 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C4D98D2289E0B300813828 /* logo.png */; };
+		A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481B2277724B00364AE9 /* QuestionType.swift */; };
+		A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE481F2277728F00364AE9 /* QuestionManager.swift */; };
+		A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */; };
+		A1E2E57A22848E4500F7B6E9 /* brain.gif in Resources */ = {isa = PBXBuildFile; fileRef = A1E2E57922848E4400F7B6E9 /* brain.gif */; };
+		A1E2E57C228493FB00F7B6E9 /* brain_slow.gif in Resources */ = {isa = PBXBuildFile; fileRef = A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */; };
+		A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */; };
 		FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */; };
 		FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FB72274F80500BC876F /* ResultsViewController.swift */; };
 		FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */; };
@@ -40,6 +52,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A10E668F227B41CC009FEF26 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDatabase.swift; sourceTree = "<group>"; };
+		A146EA692280FC7E00C5065A /* SantiyPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantiyPoints.swift; sourceTree = "<group>"; };
+		A1AA3362228218A800A69408 /* SanityPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanityPointsManager.swift; sourceTree = "<group>"; };
+		A1C2B45E22823EBB0070BC4B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A1C4D98D2289E0B300813828 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../Assets/logo.png; sourceTree = "<group>"; };
+		A1DE481B2277724B00364AE9 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		A1DE481F2277728F00364AE9 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerQuestion.swift; sourceTree = "<group>"; };
+		A1E2E57922848E4400F7B6E9 /* brain.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = brain.gif; path = ../../Assets/brain.gif; sourceTree = "<group>"; };
+		A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = brain_slow.gif; path = ../../Assets/brain_slow.gif; sourceTree = "<group>"; };
+		A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RorschachQuestion.swift; sourceTree = "<group>"; };
 		FA0F4FB52274F71B00BC876F /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FA0F4FB72274F80500BC876F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		FA0F4FBA227516A100BC876F /* TwoAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoAnswerViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +110,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1DE481A2277719400364AE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1DE48212277752200364AE9 /* QuestionTypes */,
+				A1DE481F2277728F00364AE9 /* QuestionManager.swift */,
+				A146EA692280FC7E00C5065A /* SantiyPoints.swift */,
+				A1AA3362228218A800A69408 /* SanityPointsManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1DE48212277752200364AE9 /* QuestionTypes */ = {
+			isa = PBXGroup;
+			children = (
+				A1DE481B2277724B00364AE9 /* QuestionType.swift */,
+				A1DE48222277758300364AE9 /* TwoAnswerQuestion.swift */,
+				A13BDE0A2278D92100B1388C /* QuestionDatabase.swift */,
+				A10E668F227B41CC009FEF26 /* Question.swift */,
+				A1E4DBB9227B5F73005DFC45 /* RorschachQuestion.swift */,
+			);
+			path = QuestionTypes;
+			sourceTree = "<group>";
+		};
 		FA0F4FB92275161600BC876F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,13 +169,18 @@
 		FA9358552272427F006E521C /* BatSh!tCrazyTest */ = {
 			isa = PBXGroup;
 			children = (
+				A1DE481A2277719400364AE9 /* Model */,
 				FA0F4FB92275161600BC876F /* ViewControllers */,
 				FA9358562272427F006E521C /* AppDelegate.swift */,
 				FA93585A2272427F006E521C /* Main.storyboard */,
 				FA93586022724281006E521C /* Assets.xcassets */,
 				FA93586222724281006E521C /* LaunchScreen.storyboard */,
 				FA93586522724281006E521C /* Info.plist */,
+				A1C4D98D2289E0B300813828 /* logo.png */,
+				A1E2E57922848E4400F7B6E9 /* brain.gif */,
+				A1E2E57B228493FB00F7B6E9 /* brain_slow.gif */,
 				FA93585D2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld */,
+				A1C2B45E22823EBB0070BC4B /* Utility.swift */,
 			);
 			path = "BatSh!tCrazyTest";
 			sourceTree = "<group>";
@@ -255,7 +307,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E2E57C228493FB00F7B6E9 /* brain_slow.gif in Resources */,
 				FA93586422724281006E521C /* LaunchScreen.storyboard in Resources */,
+				A1C4D98E2289E0B300813828 /* logo.png in Resources */,
+				A1E2E57A22848E4500F7B6E9 /* brain.gif in Resources */,
 				FA93586122724281006E521C /* Assets.xcassets in Resources */,
 				FA93585C2272427F006E521C /* Main.storyboard in Resources */,
 			);
@@ -282,14 +337,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DE48232277758300364AE9 /* TwoAnswerQuestion.swift in Sources */,
+				A1E4DBBA227B5F73005DFC45 /* RorschachQuestion.swift in Sources */,
+				A146EA6A2280FC7E00C5065A /* SantiyPoints.swift in Sources */,
 				FA0F4FBD227516E100BC876F /* RorschachViewController.swift in Sources */,
 				FA9358592272427F006E521C /* IntroductionViewController.swift in Sources */,
 				FA0F4FBB227516A100BC876F /* TwoAnswerViewController.swift in Sources */,
+				A1DE481C2277724B00364AE9 /* QuestionType.swift in Sources */,
 				FA9358572272427F006E521C /* AppDelegate.swift in Sources */,
 				FA0F4FB62274F71B00BC876F /* QuestionViewController.swift in Sources */,
 				FA0F4FBF227516F400BC876F /* ResponseViewController.swift in Sources */,
 				FA0F4FB82274F80500BC876F /* ResultsViewController.swift in Sources */,
+				A10E6690227B41CC009FEF26 /* Question.swift in Sources */,
 				FA93585F2272427F006E521C /* BatSh_tCrazyTest.xcdatamodeld in Sources */,
+				A13BDE0B2278D92100B1388C /* QuestionDatabase.swift in Sources */,
+				A1AA3363228218A800A69408 /* SanityPointsManager.swift in Sources */,
+				A1DE48202277728F00364AE9 /* QuestionManager.swift in Sources */,
+				A1C2B45F22823EBB0070BC4B /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JY5S459J8L;
 				INFOPLIST_FILE = "BatSh!tCrazyTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JY5S459J8L;
 				INFOPLIST_FILE = "BatSh!tCrazyTest/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

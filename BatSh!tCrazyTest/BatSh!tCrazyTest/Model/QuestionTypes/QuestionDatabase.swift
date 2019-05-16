@@ -28,7 +28,7 @@ class QuestionDatabase {
     public func generateRandomTwoAnswerQuestions() {
         var switchValues = [Int](0...twoAnswerFunctions.count-1)
         var count = 10
-        
+
         while count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(switchValues.count)))
             let randomNum = switchValues[arrayKey]
@@ -58,18 +58,18 @@ class QuestionDatabase {
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", sanityPoint: SanityPointValue.Introvert)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", sanityPoint: SanityPointValue.Intuition)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", sanityPoint: SanityPointValue.Thinking)
-        
+
         taQuestion.insertQuestion(questionName: "Q1.Ch1-2(Tails).FQ1-2", questionText: "What if I flip the coin 999 times and all 999 times it lands heads up. What side will land face up on the 1000th flip?", buttonNames: ["Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4"])
         taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", buttonText: "Heads", nextResponseName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", responseText: "Are you normally so easily swayed?", nextQuestionName: nil, end: true)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", sanityPoint: SanityPointValue.Intuition)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-2(Tails).FQ1-1(Heads).RE1-3", sanityPoint: SanityPointValue.Feeling)
-        
+
         taQuestion.insertButton(buttonName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", buttonText: "Tails", nextResponseName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", responseText: "Do you root for the underdog because you see yourself as one?", nextQuestionName: nil, end: true)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", sanityPoint: SanityPointValue.Introvert)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-2(Tails).FQ1-2(Tails).RE1-4", sanityPoint: SanityPointValue.Feeling)
-        
+
         twoAnswerQuestions.append(taQuestion)
     }
 
@@ -89,12 +89,20 @@ class QuestionDatabase {
         taQuestion.insertButton(buttonName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", buttonText: "No", nextResponseName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", nextQuestionName: nil, isNextAQuestion: false, end: false)
 
         taQuestion.insertResponse(responseName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", responseText: "Do you pride yourself in your unpredictability?", nextQuestionName: nil, end: true)
-        // CHANGE SANITY
-        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Introvert)
-        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Feeling)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Perceiving)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Thinking)
+
         taQuestion.insertResponse(responseName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", responseText: "There are few things as nauseating as pure obedience.", nextQuestionName: nil, end: true)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", sanityPoint: SanityPointValue.Judging)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", sanityPoint: SanityPointValue.Thinking)
+
         taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Impressive. I hardly even know you, but I can tell there's something clearly wrong with you.", nextQuestionName: nil, end: true)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", sanityPoint: SanityPointValue.Perceiving)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", sanityPoint: SanityPointValue.Thinking)
+
         taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", responseText: "Do you pride yourself in your unpredictability?", nextQuestionName: nil, end: true)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", sanityPoint: SanityPointValue.Perceiving)
+        taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", sanityPoint: SanityPointValue.Feeling)
 
         twoAnswerQuestions.append(taQuestion)
     }
@@ -104,8 +112,14 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q8: Risk Taker", questionText: "Do you consider yourself a risk taker?", buttonNames: ["Q8.Ch1-1(Yes)", "Q8.Ch1-2(No)"])
       taQuestion.insertButton(buttonName: "Q8.Ch1-1(Yes)", buttonText: "Yes", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
-        
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-1(Yes)", sanityPoint: SanityPointValue.Extrovert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-1(Yes)", sanityPoint: SanityPointValue.Feeling)
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-1(Yes)", sanityPoint: SanityPointValue.Sensing)
+
       taQuestion.insertButton(buttonName: "Q8.Ch1-2(No)", buttonText: "No", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-2(No)", sanityPoint: SanityPointValue.Introvert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-2(No)", sanityPoint: SanityPointValue.Judging)
+      taQuestion.setButtonSantiyValue(buttonName: "Q8.Ch1-2(No)", sanityPoint: SanityPointValue.Thinking)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -118,13 +132,20 @@ class QuestionDatabase {
       taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1", buttonText: "No", nextResponseName: nil, nextQuestionName: "Q4.Ch1-2(No).FQ1", isNextAQuestion: true, end: false)
 
       taQuestion.insertResponse(responseName: "Q4.Ch1-1(Yes).RE1-1", responseText: "Must be exhausting being so afraid and gullable all the time.", nextQuestionName: nil, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Feeling)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Sensing)
 
       taQuestion.insertQuestion(questionName: "Q4.Ch1-2(No).FQ1", questionText: "Now the entire town tells you there are ravenous man-eating unicorns on the road to Town B.\n\nDo you travel on the road to Town B in search of riches? Or do you turn around and go home empty-handed?", buttonNames: ["Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2"])
       taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", buttonText: "Travel to Town B", nextResponseName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", nextQuestionName: nil, isNextAQuestion: false, end: false)
       taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", buttonText: "Return Home", nextResponseName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", nextQuestionName: nil, isNextAQuestion: false, end: false)
 
       taQuestion.insertResponse(responseName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", responseText: "You might not believe in ravenous man-eating unicorns, but have you considered something truly dangerous could be lurking on the road to Town B?\n\nWould you earnestly gamble with your life as easily as flipping a coin?", nextQuestionName: nil, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", sanityPoint: SanityPointValue.Judging)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", sanityPoint: SanityPointValue.Sensing)
+
       taQuestion.insertResponse(responseName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", responseText: "You might not believe in ravenous man-eating unicorns, but you have enough sense to know something dangerous could be lurking on the road to Town B.\n\nOr perhaps your fear got the better of you again. How often do you stand in your own way of success?", nextQuestionName: nil, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", sanityPoint: SanityPointValue.Thinking)
+      taQuestion.setButtonSantiyValue(buttonName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", sanityPoint: SanityPointValue.Intuition)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -137,7 +158,13 @@ class QuestionDatabase {
       taQuestion.insertButton(buttonName: "Q5.Ch1-2(Don't Surrender)", buttonText: "Don't Surrender", nextResponseName: "Q5.Ch1-2(Don't Surrender)", nextQuestionName: nil, isNextAQuestion: false, end: false)
 
       taQuestion.insertResponse(responseName: "Q5.Ch1-1(Surrender)", responseText: "While you had intended on dying a Martyr, your crew instead mocks you for being a coward.\n\nYou die listening to your fellow crew members boo you and cheer your death.\n\nAre you so certain the right choice is always the best choice?", nextQuestionName: nil, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-1(Surrender)", sanityPoint: SanityPointValue.Thinking)
+      taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-1(Surrender)", sanityPoint: SanityPointValue.Intuition)
+
       taQuestion.insertResponse(responseName: "Q5.Ch1-2(Don't Surrender)", responseText: "Your crew was tired of following you into battles they couldn't hope to win.\n\nSo they staged a mutany, took control of the ship, and offered your head to save their own.\n\nDo the lives of others mean so little to you when compared against your own?", nextQuestionName: nil, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-2(Don't Surrender)", sanityPoint: SanityPointValue.Extrovert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-2(Don't Surrender)", sanityPoint: SanityPointValue.Feeling)
+      taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-2(Don't Surrender)", sanityPoint: SanityPointValue.Sensing)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -172,9 +199,12 @@ class QuestionDatabase {
       taQuestion.insertQuestion(questionName: "Q9: Hide and Seek", questionText: "When playing Hide-and-Seek are you better at hiding or seeking?", buttonNames: ["Q9.Ch1-1(Hiding)", "Q9.Ch1-2(Seeking)"])
       taQuestion.insertButton(buttonName: "Q9.Ch1-1(Hiding)", buttonText: "Hiding", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
       taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-1(Hiding)", sanityPoint: SanityPointValue.Introvert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-1(Hiding)", sanityPoint: SanityPointValue.Judging)
+
       taQuestion.insertButton(buttonName: "Q9.Ch1-2(Seeking)", buttonText: "Seeking", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
       taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-2(Seeking)", sanityPoint: SanityPointValue.Extrovert)
-        
+      taQuestion.setButtonSantiyValue(buttonName: "Q9.Ch1-2(Seeking)", sanityPoint: SanityPointValue.Sensing)
+
       twoAnswerQuestions.append(taQuestion)
     }
 
@@ -183,7 +213,12 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "10: Late or Early", questionText: "Would you rather always be 5 minutes late or 30 minutes early?", buttonNames: ["Q10.Ch1-1(Late)", "Q10.Ch1-2(Early)"])
       taQuestion.insertButton(buttonName: "Q10.Ch1-1(Late)", buttonText: "Late", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q10.Ch1-1(Late)", sanityPoint: SanityPointValue.Feeling)
+      taQuestion.setButtonSantiyValue(buttonName: "Q10.Ch1-1(Late)", sanityPoint: SanityPointValue.Perceiving)
+
       taQuestion.insertButton(buttonName: "Q10.Ch1-2(Early)", buttonText: "Early", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q10.Ch1-2(Early)", sanityPoint: SanityPointValue.Intuition)
+      taQuestion.setButtonSantiyValue(buttonName: "Q10.Ch1-2(Early)", sanityPoint: SanityPointValue.Judging)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -193,7 +228,10 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q11: Milk in Cereal", questionText: "Milk before or after the cereal?", buttonNames: ["Q11.Ch1-1(Before the cereal)", "Q11.Ch1-2(After the cereal)"])
       taQuestion.insertButton(buttonName: "Q11.Ch1-1(Before the cereal)", buttonText: "Before the cereal", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q11.Ch1-1(Before the cereal)", sanityPoint: SanityPointValue.Perceiving)
+
       taQuestion.insertButton(buttonName: "Q11.Ch1-2(After the cereal)", buttonText: "After the cereal", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q11.Ch1-2(After the cereal)", sanityPoint: SanityPointValue.Judging)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -203,7 +241,12 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q12: Placement of Trust", questionText: "Do you tend to place your trust more in yourself, or others?", buttonNames: ["Q12.Ch1-1(Yourself)", "Q12.Ch1-2(Other people)"])
       taQuestion.insertButton(buttonName: "Q12.Ch1-1(Yourself)", buttonText: "Yourself", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q12.Ch1-1(Yourself)", sanityPoint: SanityPointValue.Introvert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q12.Ch1-1(Yourself)", sanityPoint: SanityPointValue.Intuition)
+
       taQuestion.insertButton(buttonName: "Q12.Ch1-2(Other people)", buttonText: "Other people", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q12.Ch1-2(Other people)", sanityPoint: SanityPointValue.Extrovert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q12.Ch1-2(Other people)", sanityPoint: SanityPointValue.Sensing)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -213,7 +256,10 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q14: Jar", questionText: "Do you see the jar of toxic poison as half full or half empty?", buttonNames: ["Q14.Ch1-1(Half full)", "Q14.Ch1-2(Half empty)"])
       taQuestion.insertButton(buttonName: "Q14.Ch1-1(Half full)", buttonText: "Half full", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q14.Ch1-1(Half full)", sanityPoint: SanityPointValue.Sensing)
+
       taQuestion.insertButton(buttonName: "Q14.Ch1-2(Half empty)", buttonText: "Half empty", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q14.Ch1-2(Half empty)", sanityPoint: SanityPointValue.Intuition)
 
       twoAnswerQuestions.append(taQuestion)
     }
@@ -223,7 +269,14 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q16: Cookie", questionText: "Tuesday has finally come: chocolate chip cookie day. You wait patiently in line and take the last chocolate chip cookie.\n\nA kid twice your size taps you on the shoulder and claims you stole his cookie.\n\nHe insists you give it back. What is your first natural instinct?", buttonNames: ["Q16.Ch1-1(Fight)", "Q16.Ch1-2(Flight)"])
       taQuestion.insertButton(buttonName: "Q16.Ch1-1(Fight)", buttonText: "Fight", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-1(Fight)", sanityPoint: SanityPointValue.Extrovert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-1(Fight)", sanityPoint: SanityPointValue.Sensing)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-1(Fight)", sanityPoint: SanityPointValue.Feeling)
+
       taQuestion.insertButton(buttonName: "Q16.Ch1-2(Flight)", buttonText: "Flight", nextResponseName: nil, nextQuestionName: nil, isNextAQuestion: false, end: true)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-2(Flight)", sanityPoint: SanityPointValue.Introvert)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-2(Flight)", sanityPoint: SanityPointValue.Thinking)
+      taQuestion.setButtonSantiyValue(buttonName: "Q16.Ch1-2(Flight)", sanityPoint: SanityPointValue.Intuition)
 
       twoAnswerQuestions.append(taQuestion)
     }

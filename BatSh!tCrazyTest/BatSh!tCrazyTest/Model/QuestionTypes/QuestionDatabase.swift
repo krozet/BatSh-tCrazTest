@@ -93,7 +93,7 @@ class QuestionDatabase {
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Introvert)
         taQuestion.setButtonSantiyValue(buttonName: "Q3.Ch1-1(Yes).FQ1-1(Yes).RE1-1", sanityPoint: SanityPointValue.Feeling)
         taQuestion.insertResponse(responseName: "Q3.Ch1-1(Yes).FQ1-1(No).RE1-2", responseText: "There are few things as nauseating as pure obedience.", nextQuestionName: nil, end: true)
-        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Do you feel strong taking control where you can?", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-1(Yes).RE1-3", responseText: "Impressive. I hardly even know you, but I can tell there's something clearly wrong with you.", nextQuestionName: nil, end: true)
         taQuestion.insertResponse(responseName: "Q3.Ch1-2(No).FQ2-2(No).RE1-4", responseText: "Do you pride yourself in your unpredictability?", nextQuestionName: nil, end: true)
 
         twoAnswerQuestions.append(taQuestion)
@@ -121,7 +121,7 @@ class QuestionDatabase {
 
       taQuestion.insertQuestion(questionName: "Q4.Ch1-2(No).FQ1", questionText: "Now the entire town tells you there are ravenous man-eating unicorns on the road to Town B.\n\nDo you travel on the road to Town B in search of riches? Or do you turn around and go home empty-handed?", buttonNames: ["Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2"])
       taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", buttonText: "Travel to Town B", nextResponseName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", nextQuestionName: nil, isNextAQuestion: false, end: false)
-      taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", buttonText: "Return Home", nextResponseName: nil, nextQuestionName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", isNextAQuestion: true, end: false)
+      taQuestion.insertButton(buttonName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", buttonText: "Return Home", nextResponseName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", nextQuestionName: nil, isNextAQuestion: false, end: false)
 
       taQuestion.insertResponse(responseName: "Q4.Ch1-2(No).FQ1-1(Travel to Town B).RE2-1", responseText: "You might not believe in ravenous man-eating unicorns, but have you considered something truly dangerous could be lurking on the road to Town B?\n\nWould you earnestly gamble with your life as easily as flipping a coin?", nextQuestionName: nil, end: true)
       taQuestion.insertResponse(responseName: "Q4.Ch1-2(No).FQ1-2(Return Home).RE2-2", responseText: "You might not believe in ravenous man-eating unicorns, but you have enough sense to know something dangerous could be lurking on the road to Town B.\n\nOr perhaps your fear got the better of you again. How often do you stand in your own way of success?", nextQuestionName: nil, end: true)

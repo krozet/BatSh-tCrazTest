@@ -157,7 +157,7 @@ class QuestionDatabase {
       taQuestion.insertButton(buttonName: "Q5.Ch1-1(Surrender)", buttonText: "Surrender", nextResponseName: "Q5.Ch1-1(Surrender)", nextQuestionName: nil, isNextAQuestion: false, end: false)
       taQuestion.insertButton(buttonName: "Q5.Ch1-2(Don't Surrender)", buttonText: "Don't Surrender", nextResponseName: "Q5.Ch1-2(Don't Surrender)", nextQuestionName: nil, isNextAQuestion: false, end: false)
 
-      taQuestion.insertResponse(responseName: "Q5.Ch1-1(Surrender)", responseText: "While you had intended on dying a Martyr, your crew instead mocks you for being a coward.\n\nYou die listening to your fellow crew members boo you and cheer your death.\n\nAre you so certain the right choice is always the best choice?", nextQuestionName: nil, end: true)
+      taQuestion.insertResponse(responseName: "Q5.Ch1-1(Surrender)", responseText: "While you had intended on dying with honor, your crew instead mocks you for being a coward.\n\nYou die listening to your fellow crew members boo you and cheer your death.\n\nAre you so certain the seemingly right choice is always the best choice?", nextQuestionName: nil, end: true)
       taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-1(Surrender)", sanityPoint: SanityPointValue.Thinking)
       taQuestion.setButtonSantiyValue(buttonName: "Q5.Ch1-1(Surrender)", sanityPoint: SanityPointValue.Intuition)
 

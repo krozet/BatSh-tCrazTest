@@ -52,7 +52,7 @@ class QuestionDatabase {
         taQuestion.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", buttonText: "Still Heads", nextResponseName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", sanityPoint: SanityPointValue.Thinking)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", sanityPoint: SanityPointValue.Intuition)
-        taQuestion.insertResponse(responseName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", responseText: "The odds of a coin landing heads up 100 times in a row is 1 to 1,267,650,600,228,229,401,496,703,205,376.\n\nNot the best odds. But it's clear you don't concern yourself with those sorts of calculations.", nextQuestionName: nil, end: true)
+        taQuestion.insertResponse(responseName: "Q1.Ch1-1(Heads).FQ1-1(Heads).RE1-1", responseText: "The odds of a coin landing heads up 100 times in a row is 1 to 1,267,650,600,228,229,401,496,703,205,376.\n\nNot the best odds.\n\nBut it's clear you don't concern yourself with those sorts of calculations.", nextQuestionName: nil, end: true)
         taQuestion.insertButton(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", buttonText: "Nevermind, Tails", nextResponseName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", nextQuestionName: nil, isNextAQuestion: false, end: false)
         taQuestion.insertResponse(responseName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", responseText: "Are you normally this distrusting of others?", nextQuestionName: nil, end: true)
         taQuestion.setButtonSantiyValue(buttonName: "Q1.Ch1-1(Heads).FQ1-2(Tails).RE1-2", sanityPoint: SanityPointValue.Introvert)

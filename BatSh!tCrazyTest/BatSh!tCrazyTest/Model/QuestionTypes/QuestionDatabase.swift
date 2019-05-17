@@ -27,7 +27,7 @@ class QuestionDatabase {
 
     public func generateRandomTwoAnswerQuestions() {
         var switchValues = [Int](0...twoAnswerFunctions.count-1)
-        var count = 10
+        var count = 5
 
         while count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(switchValues.count)))

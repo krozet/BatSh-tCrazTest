@@ -11,8 +11,8 @@ import Foundation
 class SanityPointsManager {
     var sanityPointTracker: SanityPoints
     var results = ["You are Bat Sh!t Crazy", "You are perfectly Sane"]
-    var crazyResponses = ["Surprised? I doubt it. Your friends have been telling you this for years. This isn't new news to you.", "You are so insane that it's hard to believe you were even able to complete this test."]
-    var saneResponses = ["Congratulations, you might be one of the most boring people to take this quiz.", "Or at the very least you aren't Bat Sh!t Crazy. I don't know you, but based on your answers I'd bet I am not the only one you have bored-to-death in your life."]
+    var crazyResponses = ["Surprised?\n\nI doubt it.\n\nYour friends have been telling you this for years. This isn't new news to you.", "You are so insane that it's hard to believe you were even able to complete this test."]
+    var saneResponses = ["Congratulations, you might be one of the most boring people to take this quiz.", "Or at the very least\nyou aren't Bat Sh!t Crazy.\n\nI don't know you, but based on your answers I'd bet I am not the only one you have bored-to-death in your life."]
     
     init() {
         sanityPointTracker = SanityPoints()

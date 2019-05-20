@@ -6,7 +6,7 @@ other possible name: __Sanity Test__
 Bat Sh!t Crazy Test is an app that allows you to determine if you have completely lost your mind or not. Answer hard questions, simple questions, trick questions, doubly non-trick trick questions, and more to reveal the truth behind the stability of your psyche.
 
 App creator: Keawa Rozet  
-Code reviewer: 
+Code reviewer: Unfortunately the person who was supposed to review my code suddenly disappeared, leaving me code-reviewerless.  
 # How it works
   The app will randomly select 10 questions from its database to ask the user. A single question might contain multiple questions attached to it, or responses to the user's answer. Each answer to every question will have one or more personality tags associated to it. At the end depending on the the user's combination of their highest and lowest personality tag occurances, they will be considered Bat Sh!t Crazy or perfectly (and boringly) sane.  
     
